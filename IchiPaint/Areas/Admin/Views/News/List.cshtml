@@ -1,0 +1,93 @@
+﻿@using IchiPaint.Common
+@model IchiPaint.Models.ListNews
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" id="txtRecordOnPage" value="@ConfigInfo.RecordOnPage" />
+<div class=" container-fluid">
+    <input type="button" value="Tạo bài mới" id="btnCreateNews" class="btn" onclick="return  window.location.href='/Admin/News/Create'" />
+</div>
+<div id="data_news" class="container-fluid dataTables_wrapper container-fluid">
+    @Html.Partial("_listNews", Model)
+</div>
+
+<script>
+    function page(index) {
+        try {
+            var recordOnPage = $('#txtRecordOnPage').val();
+            var totalPage = $('#txtTotalPage').val();
+            var start = 1;
+            var end = recordOnPage;
+            if (index === 'new') {
+                index = totalPage;
+            } else if (index === 'prew') {
+                index = 1;
+            }
+            if (index > 1) {
+                end = index * recordOnPage;
+                start = end - recordOnPage + 1;
+            }
+            var request = {
+                currentPage: index,
+                start: start,
+                end: end,
+                orderBy: 'CreateDate',
+                orderByType: 'DESC',
+                createDate: ''
+            };
+
+            axios.post("/News/Search", request).then(function (response) {
+                $('#data_news').html(response.data);
+            }).catch(error => {
+
+            });
+        } catch (e) {
+            console.log();
+        }
+    }
+
+    function deleteNews(id) {
+
+        swal({
+            title: "Bạn chắc chắn?",
+            text: "Bạn sẽ xóa bài viết này. Sẽ không thể khôi phục được",
+            icon: "warning",
+            buttons: [
+                'Không!',
+                'Có!'
+            ],
+            dangerMode: true
+        }).then(function (isConfirm) {
+            var request = {
+                id: id
+            };
+
+            if (isConfirm) {
+                axios.post("/News/Delete", request).then(function (response) {
+                    var data = response.data;
+                    if (data.Status) {
+                        swal({
+                            title: "Thành công",
+                            text: "Xóa bài viết thành công",
+                            icon: "success",
+                            buttons: true
+                        }).then((value) => {
+                            page($('#txtCurrentPage').val());
+                        });
+                    } else {
+                        swal({
+                            title: "Lỗi",
+                            text: "Vui lòng thử lại vào lúc khác",
+                            icon: "warning",
+                            buttons: true
+                        });
+                    }
+                }).catch(error => {
+
+                });
+            } 
+        });
+    }
+</script>

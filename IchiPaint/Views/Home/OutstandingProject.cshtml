@@ -1,0 +1,26 @@
+﻿@model IchiPaint.Models.ListProject
+
+@{
+    ViewBag.Title = "Dự án nổi bật";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="main_container">
+    <div class="container">
+        <div class="max-830">
+            <h2 class="color-main text-center" style="margin-bottom: 45px; margin-top: 45px;">
+                <span>
+                    Công trình tiêu biểu
+                </span>
+            </h2>
+            @foreach (var item in Model.Collection)
+            {
+                <div style="text-align: center">
+                    <figure class="image" style="display: inline-block">
+                        <img alt="@item.Name" height="600" src="@item.Avatar" width="800">
+                        <figcaption>@item.Name</figcaption>
+                    </figure>
+                </div>
+            }
+        </div>
+    </div>
+</div>

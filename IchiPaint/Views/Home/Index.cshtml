@@ -1,0 +1,102 @@
+﻿@using IchiPaint.Helpers
+@model IchiPaint.Models.IndexPortal
+
+@{
+    var lstNews = Model.LstNews;
+    var lstProject = Model.LstProject;
+
+    var baseUrl = "tin-tuc/{0}/{1}";
+
+    var urlSpecial = string.Format(baseUrl, lstNews.Collection[0].Id, HtmlControllHelpers.ReplaceUnicodeUrl(lstNews.Collection[0].Title));
+
+    var count = 0;
+}
+<div id="wrap-slideshow">
+    <div class="bg-slide" style="background-image: url(/Content/upload/images/banner-1-.png);"></div>
+    <div id="slideshow" class="single-slide owl-carousel s-dots s-nav s-auto s-loop">
+        <div class="item bg-lazy" data-src="http://localhost:50266/Content/upload/images/banner-.png"> </div>
+        <div class="item bg-lazy" data-src="http://localhost:50266/Content/Upload/images/banner-1-.png"> </div>
+    </div>
+
+</div>
+
+<section class="TOA013">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title"> Tin tức nổi bật </h2>
+        </div>
+        <div class="page-list-news">
+            <div class="feature-post block-3">
+                <div class="item">
+                    <a href="@urlSpecial" class="item_img">
+                        <img src="@lstNews.Collection[0].FeatureImage" alt="@lstNews.Collection[0].Title">
+                    </a>
+                    <div class="item_content">
+                        <a href="@urlSpecial" class="item_title">
+                            @lstNews.Collection[0].Title
+                        </a>
+                        <div class="item_decs">
+                            @lstNews.Collection[0].Description
+                        </div>
+                        <a href="@urlSpecial" class="btn  btn-primary">
+                            <span class="inner">Xem thêm</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row block-1">
+
+                @for (int i = 1; i < lstNews.Collection.Count; i++)
+                {
+                    var singleUrl = string.Format(baseUrl, lstNews.Collection[i].Id, HtmlControllHelpers.ReplaceUnicodeUrl(lstNews.Collection[i].Title));
+                    <div class="col-sm-4 col-md-4">
+                        <div class="item">
+                            <a href="@singleUrl" class="item_img">
+                                <img src="@lstNews.Collection[i].FeatureImage" alt="@lstNews.Collection[i].Title">
+                            </a>
+                            <div class="item_content">
+                                <p class="item_date">@lstNews.Collection[i].CreateDate.Substring(0, 10)</p>
+                                <a href="@singleUrl" class="item_title">
+                                    @lstNews.Collection[i].Title
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="project">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title"> Công trình tiêu biểu </h2>
+        </div>
+        <div class="page-list-news">
+            <div class="row block-1">
+                @foreach (var item in lstProject.Collection)
+                {
+                    count++;
+                    if (count <= 3)
+                    {
+                        <div class="col-sm-4 col-md-4">
+                            <div class="item">
+                                <a href="/cong-trinh-tieu-bieu.htm" class="item_img">
+                                    <img src="@item.Avatar" alt="@item.Name">
+                                </a>
+                                <div class="item_content">
+                                    <a href="/cong-trinh-tieu-bieu.htm" class="item_title">
+                                        @item.Name
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+

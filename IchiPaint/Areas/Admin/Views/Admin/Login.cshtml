@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng nhập</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     
+    <link href="~/Areas/Admin/Content/login.css" rel="stylesheet">
+    <script src="~/Areas/Admin/Scripts/jquery/jquery.min.js"></script>
+    <script src="~/Scripts/axios.min.js"></script>
+    <script src="~/Scripts/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card card-container">
+            <div class="form-signin">
+                <input type="text" id="txtUserName" class="form-control" placeholder="Tên đăng nhập">
+                <input type="password" id="txtPassword" class="form-control" placeholder="Mật khẩu">
+                <button class="btn btn-lg btn-primary btn-block btn-signin" onclick="login()">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var lockSubmit = false; 
+    function login() {
+        try {
+            var request = {
+                username: $('#txtUserName').val().trim(),
+                password: $('#txtPassword').val()
+            };
+
+            if (lockSubmit === true) 
+                return;
+             
+            lockSubmit = true;
+            axios.post("/Admin/Admin/Login", request).then(function (response) {
+                var data = response.data;
+                if (data.Status) {
+                    window.location.href = "/Admin/News/List";
+                } else {
+                    swal({
+                        title: "Lỗi",
+                        text: data.Message,
+                        icon: "warning",
+                        buttons: true
+                    });
+                }
+                lockSubmit = false;
+            }).catch(error => {
+                swal({
+                    title: "Lỗi",
+                    text: "Vui lòng thử lại vào lúc khác",
+                    icon: "warning",
+                    buttons: true
+                });
+                lockSubmit = false;
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+</script>
+</body>
+</html>

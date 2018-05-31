@@ -1,0 +1,30 @@
+﻿@using IchiPaint.Helpers
+@model IchiPaint.Models.ListProductsPortal
+@{
+    var baseUrl = "http://" + Request.Url.Authority + "/san-pham-chi-tiet/{0}/{1}";
+}
+<div class="page-list-products">
+    <div class="row block-4">
+        @foreach (var item in Model.Collection)
+        {
+            var url = string.Format(baseUrl, item.Id, HtmlControllHelpers.ReplaceUnicodeUrl(item.ShortName));
+            <div class="col-sm-4 col-md-4">
+
+                <div class="item">
+                    <div class="item_inner">
+                        <a href="@url" class="item_img">
+                            <img height="300" src="@item.Avatar" alt="">
+                        </a>
+                        <a href="@url" class="item_title">
+                            @item.ShortName
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+    @Html.Raw(Model.Paging)
+</div>
+<input type="hidden" id="txtTotalPage" value="@Model.TotalPage" />
+<input type="hidden" id="txtCurrentPage" value="@Model.CurrentPage" />
