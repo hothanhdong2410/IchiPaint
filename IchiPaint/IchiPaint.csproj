@@ -1102,6 +1102,10 @@
     <Content Include="Content\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\Images\san-pham-khac-img.png" />
+    <Content Include="Content\Images\son-bao-ve.png" />
+    <Content Include="Content\Images\son-tau-bien.png" />
+    <Content Include="Content\Images\son-trang-tri.png" />
     <Content Include="Content\Upload\images\banner-.png" />
     <Content Include="Content\Upload\images\banner-1-.png" />
     <Content Include="Content\Upload\images\Logo.png" />
@@ -1291,7 +1295,6 @@
     <Content Include="Views\Home\_newsSuggest.cshtml" />
     <Content Include="Views\Home\ListNews.cshtml" />
     <Content Include="Views\Home\_listView.cshtml" />
-    <Content Include="Views\Home\ListProduct.cshtml" />
     <Content Include="Views\Home\ColorBoard.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\_listProducts.cshtml" />

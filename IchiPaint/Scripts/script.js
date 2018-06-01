@@ -118,14 +118,15 @@
         $('.single-slide').each(function () {
             $(this).owlCarousel({
                 navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-                items:1,
+                items: 1,
                 autoplayHoverPause:false,
                 autoplay: $(this).hasClass('s-auto') ? true : false,
                 dots: $(this).hasClass('s-dots') ? true : false,
                 loop: true,
                 lazyLoad: $(this).hasClass('s-lazy') ? true : false,
                 nav: $(this).hasClass('s-nav') ? true : false,
-                stopOnHover : false,
+                stopOnHover: false
+          
                 // autoplaySpeed:1000
             })
         });
