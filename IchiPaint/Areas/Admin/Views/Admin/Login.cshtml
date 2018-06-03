@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Đăng nhập</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-     
-    <link href="~/Areas/Admin/Content/login.css" rel="stylesheet">
+    <link href="~/Areas/Admin/Content/styles/login.css" rel="stylesheet">
     <script src="~/Areas/Admin/Scripts/jquery/jquery.min.js"></script>
     <script src="~/Scripts/axios.min.js"></script>
     <script src="~/Scripts/sweetalert.min.js"></script>
@@ -17,7 +16,7 @@
     <div class="container">
         <div class="card card-container">
             <div class="form-signin">
-                <input type="text" id="txtUserName" class="form-control" placeholder="Tên đăng nhập">
+                <input type="text" id="txtUserName" class="form-control" placeholder="Tên đăng nhập"  >
                 <input type="password" id="txtPassword" class="form-control" placeholder="Mật khẩu">
                 <button class="btn btn-lg btn-primary btn-block btn-signin" onclick="login()">Đăng nhập</button>
             </div>
@@ -25,6 +24,16 @@
     </div>
 
 <script>
+
+    $(document).ready(function() {
+        $("#txtUserName").focus();
+
+        $("#txtPassword").keypress(function (e) {
+            if(e.which === 13) {
+                login();
+            }
+        });
+    });
     var lockSubmit = false; 
     function login() {
         try {

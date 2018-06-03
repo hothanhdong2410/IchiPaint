@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using IchiPaint.Common;
 using IchiPaint.DataAccess;
@@ -12,20 +8,18 @@ using NaviCommon;
 
 namespace IchiPaint.Areas.Admin.Controllers
 {
+    [RoutePrefix("admin")]
     public class AdminController : Controller
     {
-        private UsersDA _usersDa = new UsersDA();
-        public ActionResult Index()
-        {
-            return View();
-        }
+        private readonly UsersDA _usersDa = new UsersDA();
 
+        [Route("dang-nhap")]
         [HttpGet]
         public ActionResult Login()
         {
             try
             {
-                return View();
+                return View("~/Areas/Admin/Views/Admin/Login.cshtml");
             }
             catch (Exception e)
             {
@@ -33,12 +27,13 @@ namespace IchiPaint.Areas.Admin.Controllers
                 throw;
             }
         }
+
         [HttpPost]
         public ActionResult Login(User request)
         {
             try
             {
-                DataSet ds = new DataSet();
+                var ds = new DataSet();
                 _usersDa.CheckLogin(request, ref ds);
 
                 if (!_usersDa.CheckLogin(request, ref ds))
@@ -48,7 +43,7 @@ namespace IchiPaint.Areas.Admin.Controllers
                         Message = "Sai tên đăng nhập hoặc mật khẩu"
                     });
 
-                var user = (User)CBO.FillObjectFromDataSet(ds, typeof(User));
+                var user = (User) CBO.FillObjectFromDataSet(ds, typeof(User));
                 DataMemory.CurrentUser = user;
                 return Json(new
                 {
@@ -63,6 +58,7 @@ namespace IchiPaint.Areas.Admin.Controllers
             }
         }
 
+        [Route("dang-xuat")]
         [HttpGet]
         public ActionResult Logout()
         {
@@ -81,29 +77,7 @@ namespace IchiPaint.Areas.Admin.Controllers
                 Logger.Log.Error(e.ToString());
                 throw;
             }
-            return RedirectToAction("Login");
-        }
-
-
-        [HttpGet]
-        public ActionResult Setting()
-        {
-            try
-            {
-                var httpSession = System.Web.HttpContext.Current.Session;
-                if (httpSession.Count > 0)
-                {
-                    Response.Cookies.Clear();
-                    Session.RemoveAll();
-                    Session.Abandon();
-                }
-            }
-            catch (Exception e)
-            {
-                Logger.Log.Error(e.ToString());
-                throw;
-            }
-            return View();
+            return Redirect("/admin/dang-nhap");
         }
     }
 }

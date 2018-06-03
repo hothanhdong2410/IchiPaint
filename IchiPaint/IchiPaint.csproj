@@ -208,7 +208,8 @@
     <Content Include="Areas\Admin\Content\css\dataTables.bootstrap4.css" />
     <Content Include="Areas\Admin\Content\css\sb-admin.css" />
     <Content Include="Areas\Admin\Content\css\sb-admin.min.css" />
-    <Content Include="Areas\Admin\Content\login.css" />
+    <Content Include="Areas\Admin\Content\styles\login.css" />
+    <Content Include="Areas\Admin\Content\styles\style.css" />
     <Content Include="Areas\Admin\Scripts\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Areas\Admin\Scripts\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Areas\Admin\Scripts\bootstrap\css\bootstrap-reboot.css" />
@@ -1132,6 +1133,7 @@
     <Content Include="fonts\icomoon\icomoonfdae.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\css\Site.css" />
+    <Content Include="gulpfile.js" />
     <Content Include="Scripts\axios.min.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1193,7 +1195,6 @@
     <Content Include="Areas\Admin\Scripts\font-awesome\scss\_variables.scss" />
     <Content Include="Areas\Admin\Scripts\jquery\jquery.min.map" />
     <Content Include="Areas\Admin\Scripts\jquery\jquery.slim.min.map" />
-    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Menu.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -1247,6 +1248,9 @@
     <Content Include="Areas\Admin\Views\Project\List.cshtml" />
     <Content Include="Areas\Admin\Views\Page\AboutUs.cshtml" />
     <Content Include="Areas\Admin\Views\Page\AgencyPolicy.cshtml" />
+    <Content Include="Areas\Admin\Content\sass\style.scss" />
+    <Content Include="package.json" />
+    <Content Include="Areas\Admin\Content\sass\login.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />

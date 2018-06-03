@@ -21,7 +21,7 @@ namespace IchiPaint.Areas.Admin
                 new { action = "Login", id = UrlParameter.Optional }
             );
 
-        
+            //context.MapRoute("Admin", "quan-tri-ichi.htm", new { controller = "Admin", action = "Login" });
         }
     }
 }
