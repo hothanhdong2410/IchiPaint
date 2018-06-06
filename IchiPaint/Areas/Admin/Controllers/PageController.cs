@@ -7,7 +7,6 @@ using System.Web.Mvc;
 using IchiPaint.Common;
 using IchiPaint.DataAccess;
 using IchiPaint.Models;
-using NaviCommon;
 
 namespace IchiPaint.Areas.Admin.Controllers
 {

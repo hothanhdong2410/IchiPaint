@@ -71,9 +71,6 @@
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="NaviCommon">
-      <HintPath>..\..\DLL\NaviCommon.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -181,7 +178,9 @@
     <Compile Include="Areas\Admin\Controllers\PageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectController.cs" />
+    <Compile Include="Common\CBO.cs" />
     <Compile Include="Common\Email.cs" />
+    <Compile Include="Common\Null.cs" />
     <Compile Include="Common\PhongThuy.cs" />
     <Compile Include="Common\DataMemory.cs" />
     <Compile Include="Common\SQLHelper.cs" />
@@ -1102,6 +1101,7 @@
     <Content Include="Content\ckfinder\skins\v1\skin.js" />
     <Content Include="Content\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Content\ckfinder\translations.txt" />
+    <Content Include="Content\css\dangtq.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\Images\san-pham-khac-img.png" />
     <Content Include="Content\Images\son-bao-ve.png" />

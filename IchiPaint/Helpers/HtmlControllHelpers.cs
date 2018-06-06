@@ -1,5 +1,6 @@
 ﻿//HungTD:26-09-2014
 
+using IchiPaint.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,7 +100,7 @@ namespace IchiPaint.Helpers
             }
             catch (Exception ex)
             {
-                NaviCommon.Common.log.Error(ex.ToString());
+                Logger.Log.Error(ex.ToString());
                 return string.Empty;
             }
         }
@@ -179,7 +180,7 @@ namespace IchiPaint.Helpers
             }
             catch (Exception ex)
             {
-                NaviCommon.Common.log.Error(ex.ToString());
+                Logger.Log.Error(ex.ToString());
                 return string.Empty;
             }
         }
@@ -270,7 +271,7 @@ namespace IchiPaint.Helpers
             }
             catch (Exception ex)
             {
-                NaviCommon.Common.log.Error(ex.ToString());
+                Logger.Log.Error(ex.ToString());
                 return string.Empty;
             }
         }
@@ -318,7 +319,7 @@ namespace IchiPaint.Helpers
             }
             catch (Exception ex)
             {
-                NaviCommon.Common.log.Error(ex.ToString());
+                Logger.Log.Error(ex.ToString());
                 return "";
             }
         }

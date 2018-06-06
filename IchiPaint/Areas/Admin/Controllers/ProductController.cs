@@ -8,7 +8,6 @@ using IchiPaint.Common;
 using IchiPaint.DataAccess;
 using IchiPaint.Helpers;
 using IchiPaint.Models;
-using NaviCommon;
 
 namespace IchiPaint.Areas.Admin.Controllers
 {
@@ -115,7 +114,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var total = 0;
             var ds = _productDa.SearchGroup(request, ref total);
-            var lstGroupProduct = CBO.Fill2ListFromDataSet<GroupProducts>(ds, typeof(GroupProducts));
+            //var lstGroupProduct = CBO.Fill2ListFromDataSet<GroupProducts>(ds, typeof(GroupProducts));
+            List<GroupProducts> lstGroupProduct = CBO<GroupProducts>.FillCollectionFromDataSet(ds);
             decimal totalPage = Math.Ceiling(((decimal) total / ConfigInfo.RecordOnPage));
             var paging = HtmlControllHelpers.WritePaging(totalPage, request.CurrentPage, total, ConfigInfo.RecordOnPage,
                 "nhóm sản phẩm");
@@ -232,7 +232,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var total = 0;
             var ds = _productDa.SearchProduct(request, ref total);
-            var lstGroupProduct = CBO.Fill2ListFromDataSet<Products>(ds, typeof(Products));
+            //var lstGroupProduct = CBO.Fill2ListFromDataSet<Products>(ds, typeof(Products));
+            List<Products> lstGroupProduct = CBO<Products>.FillCollectionFromDataSet(ds);
             var totalPage = Math.Ceiling(((decimal) total / ConfigInfo.RecordOnPage));
             var paging = HtmlControllHelpers.WritePaging(totalPage, request.CurrentPage, total, ConfigInfo.RecordOnPage,
                 "nhóm sản phẩm");
@@ -252,9 +253,10 @@ namespace IchiPaint.Areas.Admin.Controllers
 
         private List<GroupProducts> GetGroupProduct()
         {
-            var groupProductses = new List<GroupProducts>();
+            //var groupProductses = new List<GroupProducts>();
             DataSet ds = _productDa.GetAllGroup();
-            groupProductses = CBO.Fill2ListFromDataSet<GroupProducts>(ds, typeof(GroupProducts));
+            //groupProductses = CBO.Fill2ListFromDataSet<GroupProducts>(ds, typeof(GroupProducts));
+            List<GroupProducts> groupProductses = CBO<GroupProducts>.FillCollectionFromDataSet(ds);
             return groupProductses;
         }
     }

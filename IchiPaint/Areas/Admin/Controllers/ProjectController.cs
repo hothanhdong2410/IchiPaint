@@ -7,7 +7,6 @@ using IchiPaint.Common;
 using IchiPaint.DataAccess;
 using IchiPaint.Helpers;
 using IchiPaint.Models;
-using NaviCommon;
 
 namespace IchiPaint.Areas.Admin.Controllers
 {
@@ -109,7 +108,8 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var total = 0;
             var ds = _projectDa.Search(request, ref total);
-            var lstNew = CBO.Fill2ListFromDataSet<Project>(ds, typeof(Project));
+            //var lstNew = CBO.Fill2ListFromDataSet<Project>(ds, typeof(Project));
+            List<Project> lstNew = CBO<Project>.FillCollectionFromDataSet(ds);
             var totalPage = Math.Ceiling(((decimal)total / ConfigInfo.RecordOnPage));
             var paging = HtmlControllHelpers.WritePaging(totalPage, request.CurrentPage, total, ConfigInfo.RecordOnPage, "Công trình");
             var listNews = new ListProject()

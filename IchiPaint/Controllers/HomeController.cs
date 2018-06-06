@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Web.Mvc;
 using IchiPaint.Common;
 using IchiPaint.DataAccess;
 using IchiPaint.Helpers;
 using IchiPaint.Models;
-using NaviCommon;
 
 namespace IchiPaint.Controllers
 {
@@ -26,7 +26,7 @@ namespace IchiPaint.Controllers
             var pTotal = 0;
             var ds = _newsDa.GetForPortalDetail(portalSearchNews, ref pTotal);
 
-            var list = CBO.Fill2ListFromDataSet<News>(ds, typeof(News));
+            List<News> list = CBO<News>.FillCollectionFromDataSet(ds);
             var listView = new ListNews
             {
                 Collection = list
@@ -34,7 +34,7 @@ namespace IchiPaint.Controllers
 
 
             ds = _projectDa.GetSpecial();
-            var listProject = CBO.Fill2ListFromDataSet<Project>(ds, typeof(Project));
+            List<Project> listProject = CBO<Project>.FillCollectionFromDataSet(ds);
 
             var indexPortal = new IndexPortal()
             {
@@ -73,7 +73,7 @@ namespace IchiPaint.Controllers
             var pTotal = 0;
             var ds = _newsDa.GetForPortalDetail(portalSearchNews, ref pTotal);
 
-            var list = CBO.Fill2ListFromDataSet<News>(ds, typeof(News));
+            List<News> list = CBO<News>.FillCollectionFromDataSet(ds);
             var listView = new ListNews
             {
                 Collection = list
@@ -143,7 +143,8 @@ namespace IchiPaint.Controllers
             news = new News();
             var total = 0;
             var ds = _newsDa.GetForPortalIndex(portalSearchNews, ref total);
-            var list = CBO.Fill2ListFromDataSet<News>(ds, typeof(News));
+            //var list = CBO.Fill2ListFromDataSet<News>(ds, typeof(News));
+            List<News> list = CBO<News>.FillCollectionFromDataSet(ds);
             var totalPage = Math.Ceiling((decimal)total / ConfigInfo.RecordOnPageIndex);
             var paging = HtmlControllHelpers.WritePagingPortal(totalPage, portalSearchNews.CurrentPage, total,
                 ConfigInfo.RecordOnPageIndex);
@@ -165,7 +166,7 @@ namespace IchiPaint.Controllers
 
         #region Sản phẩm
         [HttpGet]
-        [Route("san-pham/son-trang-tri.htm")]
+        [Route("san-pham/son-noi-that.htm")]
         public ActionResult DecorativePaint()
         {
             var key = 6;
@@ -177,16 +178,16 @@ namespace IchiPaint.Controllers
                 GroupId = key,
                 OrderBy = "Id",
                 OrderByType = "Desc",
-                GroupName = "Sơn trang trí"
+                GroupName = "Sơn nội thất"
             };
 
             var list = GetProductPortal(request);
-            list.Router = "son-trang-tri";
+            list.Router = "son-noi-that";
             return View("Products", list);
         }
 
         [HttpGet]
-        [Route("san-pham/son-bao-ve.htm")]
+        [Route("san-pham/son-ngoai-that.htm")]
         public ActionResult ProtectivePaint()
         {
             var key = 7;
@@ -198,34 +199,35 @@ namespace IchiPaint.Controllers
                 GroupId = key,
                 OrderBy = "Id",
                 OrderByType = "Desc",
-                GroupName = "Sơn bảo vệ"
+                GroupName = "Sơn ngoại thất"
             };
 
             var list = GetProductPortal(request);
-            list.Router = "son-bao-ve";
+            list.Router = "son-ngoai-that";
             return View("Products", list);
         }
 
-        [HttpGet]
-        [Route("san-pham/son-tau-bien.htm")]
-        public ActionResult PaintingShip()
-        {
-            var key = 9;
-            var request = new SearchProductPortalRequest()
-            {
-                CurrentPage = 1,
-                Start = 1,
-                End = ConfigInfo.RecordOnPageIndex,
-                GroupId = key,
-                OrderBy = "Id",
-                OrderByType = "Desc",
-                GroupName = "Sơn tàu biển"
-            };
+        // bỏ
+        //[HttpGet]
+        //[Route("san-pham/son-tau-bien.htm")]
+        //public ActionResult PaintingShip()
+        //{
+        //    var key = 9;
+        //    var request = new SearchProductPortalRequest()
+        //    {
+        //        CurrentPage = 1,
+        //        Start = 1,
+        //        End = ConfigInfo.RecordOnPageIndex,
+        //        GroupId = key,
+        //        OrderBy = "Id",
+        //        OrderByType = "Desc",
+        //        GroupName = "Sơn tàu biển"
+        //    };
 
-            var list = GetProductPortal(request);
-            list.Router = "son-tau-bien";
-            return View("Products", list);
-        }
+        //    var list = GetProductPortal(request);
+        //    list.Router = "son-tau-bien";
+        //    return View("Products", list);
+        //}
 
         [HttpGet]
         [Route("san-pham/san-pham-khac.htm")]
@@ -256,13 +258,13 @@ namespace IchiPaint.Controllers
             var groupName = "";
             switch (type)
             {
-                case "son-trang-tri":
+                case "son-noi-that":
                     key = 6;
-                    groupName = "Sơn trang trí";
+                    groupName = "Sơn nội thất";
                     break;
-                case "son-bao-ve":
+                case "son-ngoai-that":
                     key = 7;
-                    groupName = "Sơn bảo vệ";
+                    groupName = "Sơn ngoại thất";
                     break;
                 case "san-pham-khac":
                     key = 8;
@@ -305,7 +307,7 @@ namespace IchiPaint.Controllers
         {
             var total = 0;
             var ds = _productDa.GetProductPortal(productPortalRequest, ref total);
-            var list = CBO.Fill2ListFromDataSet<Products>(ds, typeof(Products));
+            List<Products> list = CBO<Products>.FillCollectionFromDataSet(ds);
             var totalPage = Math.Ceiling((decimal)total / ConfigInfo.RecordOnPageIndex);
             var paging = HtmlControllHelpers.WritePagingPortal(totalPage, productPortalRequest.CurrentPage, total,
                 ConfigInfo.RecordOnPageIndex);
@@ -337,7 +339,8 @@ namespace IchiPaint.Controllers
 
             var total = 0;
             var ds = _projectDa.Search(request, ref total);
-            var lst = CBO.Fill2ListFromDataSet<Project>(ds, typeof(Project));
+            //var lst = CBO.Fill2ListFromDataSet<Project>(ds, typeof(Project));
+            List<Project> lst = CBO<Project>.FillCollectionFromDataSet(ds);
             var listProject = new ListProject()
             {
                 Collection = lst

@@ -4,7 +4,6 @@ using System.Data;
 using System.Runtime.InteropServices;
 using IchiPaint.DataAccess;
 using Microsoft.Office.Interop.Excel;
-using NaviCommon;
 
 namespace IchiPaint.Common
 {
@@ -83,8 +82,8 @@ namespace IchiPaint.Common
 
             NewsDA _NewsDA = new NewsDA();
             DataSet _ds = _NewsDA.Feng_Shui_GetAll();
-            List<Menh> arrMenh = CBO.Fill2ListFromDataSet<Menh>(_ds, typeof(Menh));
-
+            //List<Menh> arrMenh = CBO.Fill2ListFromDataSet<Menh>(_ds, typeof(Menh));
+            List<Menh> arrMenh = CBO<Menh>.FillCollectionFromDataSet(_ds);
 
             var start = 1948;
             foreach (var item in arrMenh)
