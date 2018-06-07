@@ -25,6 +25,12 @@ namespace IchiPaint.Areas.Admin.Controllers
             return View(model);
         }
 
+        public ActionResult ContactUs()
+        {
+            var model = GetById(3);
+            return View(model);
+        }
+
         private Page GetById(int id)
         {
             try

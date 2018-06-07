@@ -329,6 +329,7 @@ namespace IchiPaint.Controllers
 
         [HttpGet]
         [Route("cong-trinh-tieu-bieu.htm")]
+         
         public ActionResult OutstandingProject()
         {
             var request = new SearchProjectRequest
@@ -421,6 +422,16 @@ namespace IchiPaint.Controllers
             return View();
         }
 
+
+
+        [HttpGet]
+        [Route("gioi-thieu.htm")]
+        public ActionResult AboutUs()
+        {
+            var model = GetById(1);
+            return View(model);
+        }
+
         [HttpGet]
         [Route("chinh-sach-dai-ly.htm")]
         public ActionResult AgencyPolicy()
@@ -430,10 +441,10 @@ namespace IchiPaint.Controllers
         }
 
         [HttpGet]
-        [Route("gioi-thieu.htm")]
-        public ActionResult AboutUs()
+        [Route("lien-he.htm")]
+        public ActionResult ContactUs()
         {
-            var model = GetById(1);
+            var model = GetById(3);
             return View(model);
         }
 

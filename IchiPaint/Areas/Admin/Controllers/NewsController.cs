@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using IchiPaint.Common;
 using IchiPaint.DataAccess;
 using IchiPaint.Helpers;
 using IchiPaint.Models;
-using System.Collections.Generic;
 
 namespace IchiPaint.Areas.Admin.Controllers
 {
@@ -66,7 +64,7 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             if (DataMemory.CurrentUser == null)
                 return RedirectToAction("Logout", "Admin");
-            var news = (News)CBO.FillObjectFromDataSet(_newsDa.GetById(id), typeof(News));
+            var news = (News) CBO.FillObjectFromDataSet(_newsDa.GetById(id), typeof(News));
 
             return View("~/Areas/Admin/Views/News/Edit.cshtml", news);
         }
@@ -109,10 +107,10 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var total = 0;
             var ds = _newsDa.Search(request, ref total);
-            //var lstNew = CBO.Fill2ListFromDataSet<News>(ds, typeof(News));
-            List<News> lstNew = CBO<News>.FillCollectionFromDataSet(ds);
-            decimal totalPage = Math.Ceiling(((decimal)total / (decimal)ConfigInfo.RecordOnPage));
-            var paging = HtmlControllHelpers.WritePaging(totalPage, request.CurrentPage, total, ConfigInfo.RecordOnPage, "Tin tức");
+            var lstNew = CBO<News>.FillCollectionFromDataSet(ds);
+            var totalPage = Math.Ceiling(total / (decimal) ConfigInfo.RecordOnPage);
+            var paging = HtmlControllHelpers.WritePaging(totalPage, request.CurrentPage, total, ConfigInfo.RecordOnPage,
+                "Tin tức");
             var listNews = new ListNews
             {
                 Start = request.Start,
@@ -124,6 +122,5 @@ namespace IchiPaint.Areas.Admin.Controllers
             };
             return listNews;
         }
-
     }
 }

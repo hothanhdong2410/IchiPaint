@@ -218,7 +218,7 @@ namespace IchiPaint.DataAccess
         {
             try
             {
-                var spParameter = new SqlParameter[6];
+                var spParameter = new SqlParameter[7];
 
                 #region Set param
 
@@ -257,19 +257,26 @@ namespace IchiPaint.DataAccess
                 };
                 spParameter[4] = parameter;
 
+                parameter = new SqlParameter("@P_TITLE", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = model.Title
+                };
+                spParameter[5] = parameter;
+
                 parameter = new SqlParameter("@P_TOTAL", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output,
                     Value = -1
                 };
-                spParameter[5] = parameter;
+                spParameter[6] = parameter;
 
                 #endregion
 
                 var ds = SqlHelper.ExecuteDataset(ConfigInfo.ConnectString, CommandType.StoredProcedure,
                     "PROC_NEWS_SEARCH", spParameter);
 
-                pTotal = Convert.ToInt32(spParameter[5].Value);
+                pTotal = Convert.ToInt32(spParameter[6].Value);
 
                 return ds;
             }

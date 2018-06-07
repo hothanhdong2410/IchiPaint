@@ -40,6 +40,7 @@ namespace IchiPaint.Models
         public string OrderByType { get; set; }
         public string CategoryType { get; set; }
         public string CreateDate { get; set; }
+        public string Title { get; set; }
     }
 
 
