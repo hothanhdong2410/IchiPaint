@@ -1,0 +1,29 @@
+{
+  "name": "@ichipaint/web-trading",
+  "description": "Web project",
+  "repository": {
+    "type": "git",
+    "url": "#"
+  },
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --hide-modules",
+    "dev": "cross-env NODE_ENV=development webpack --hide-modules --watch",
+    "start": "gulp all && npm run dev"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "4.1.0",
+    "gulp-concat": "2.6.1",
+    "gulp-livereload": "3.8.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-uglifycss": "1.0.9",
+    "webpack": "^3.10.0"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  }
+}

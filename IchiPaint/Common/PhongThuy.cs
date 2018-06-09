@@ -78,11 +78,10 @@ namespace IchiPaint.Common
             };
             PhongThuyDictionary = new Dictionary<int, Menh>();
 
-            //var arrMenh = ReadFileExcel(filePath);
+            // var arrMenh = ReadFileExcel(filePath);
 
             NewsDA _NewsDA = new NewsDA();
             DataSet _ds = _NewsDA.Feng_Shui_GetAll();
-            //List<Menh> arrMenh = CBO.Fill2ListFromDataSet<Menh>(_ds, typeof(Menh));
             List<Menh> arrMenh = CBO<Menh>.FillCollectionFromDataSet(_ds);
 
             var start = 1948;
@@ -92,9 +91,17 @@ namespace IchiPaint.Common
                 item.CanChi = CanChiDictionary[soCanChi];
                 PhongThuyDictionary.Add(soCanChi, item);
                 start++;
+
+                Menh _Menh = new Menh
+                {
+                    Ten = item.Ten,
+                    MauTuongSinh = item.MauTuongKhac,
+                    MauTuongKhac = item.MauTuongKhac
+                };
+
                 soCanChi = (start - 3) % 60;
-                item.CanChi = CanChiDictionary[soCanChi];
-                PhongThuyDictionary.Add(soCanChi, item);
+                _Menh.CanChi = CanChiDictionary[soCanChi];
+                PhongThuyDictionary.Add(soCanChi, _Menh);
                 start++;
             }
         }

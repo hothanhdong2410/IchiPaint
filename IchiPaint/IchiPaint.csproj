@@ -64,7 +64,7 @@
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\General\dll\log4net.dll</HintPath>
+      <HintPath>..\..\..\General\dll\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -242,6 +242,15 @@
     <Content Include="Areas\Admin\Scripts\sb-admin-datatables.min.js" />
     <Content Include="Areas\Admin\Scripts\sb-admin.js" />
     <Content Include="Areas\Admin\Scripts\sb-admin.min.js" />
+    <Content Include="Content\BangMau\BM_Ngoai_0001.jpg" />
+    <Content Include="Content\BangMau\BM_Ngoai_0002.jpg" />
+    <Content Include="Content\BangMau\BM_Ngoai_0003.jpg" />
+    <Content Include="Content\BangMau\BM_Ngoai_0004.jpg" />
+    <Content Include="Content\BangMau\BM_Trong_0001.jpg" />
+    <Content Include="Content\BangMau\BM_Trong_0002.jpg" />
+    <Content Include="Content\BangMau\BM_Trong_0003.jpg" />
+    <Content Include="Content\BangMau\BM_Trong_0004.jpg" />
+    <Content Include="Content\BangMau\Quat_Mau.jpg" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -1103,6 +1112,18 @@
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\dangtq.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\Images\BangMau\BM_Ngoai_0001.jpg" />
+    <Content Include="Content\Images\BangMau\BM_Ngoai_0002.jpg" />
+    <Content Include="Content\Images\BangMau\BM_Ngoai_0003.jpg" />
+    <Content Include="Content\Images\BangMau\BM_Ngoai_0004.jpg" />
+    <Content Include="Content\Images\BangMau\BM_Trong_0001.jpg" />
+    <Content Include="Content\Images\BangMau\BM_Trong_0002.jpg" />
+    <Content Include="Content\Images\BangMau\BM_Trong_0003.jpg" />
+    <Content Include="Content\Images\BangMau\BM_Trong_0004.jpg" />
+    <Content Include="Content\Images\BangMau\Quat_Mau.jpg" />
+    <Content Include="Content\Images\Banner\banner-001.jpg" />
+    <Content Include="Content\Images\Banner\banner-002.jpg" />
+    <Content Include="Content\Images\Banner\banner-003.jpg" />
     <Content Include="Content\Images\san-pham-khac-img.png" />
     <Content Include="Content\Images\son-bao-ve.png" />
     <Content Include="Content\Images\son-tau-bien.png" />
@@ -1252,6 +1273,7 @@
     <Content Include="package.json" />
     <Content Include="Areas\Admin\Content\sass\login.scss" />
     <Content Include="Areas\Admin\Views\Page\ContactUs.cshtml" />
+    <None Include="Properties\PublishProfiles\Public_Ichi.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
@@ -1312,6 +1334,8 @@
     <Content Include="Views\Home\AgencyPolicy.cshtml" />
     <Content Include="Views\Home\ProductCertification.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\ColorBoard_Out.cshtml" />
+    <Content Include="Views\Home\ColorBoard_QuatMau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1331,9 +1355,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

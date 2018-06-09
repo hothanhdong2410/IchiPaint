@@ -132,8 +132,22 @@ namespace IchiPaint.Controllers
         }
 
         [HttpGet]
-        [Route("bang-mau.htm")]
+        [Route("bang-mau-noi-that.htm")]
         public ActionResult ColorBoard()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("bang-mau-ngoai-that.htm")]
+        public ActionResult ColorBoard_Out()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("quat-mau.htm")]
+        public ActionResult ColorBoard_QuatMau()
         {
             return View();
         }
@@ -364,7 +378,7 @@ namespace IchiPaint.Controllers
         [Route("tinh-toan-phong-thuy")]
         public ActionResult PhongThuy(int year)
         {
-            int canChi = (year - 3) / 60;
+            int canChi = (year - 3) % 60;
 
             if (DataMemory.PhongThuy.PhongThuyDictionary.ContainsKey(canChi))
             {
@@ -398,7 +412,8 @@ namespace IchiPaint.Controllers
                 request.AppointmentDate, request.Content);
 
             emailInfo.MailTo = request.Email;
-            var result =  EmailHelper.SendMail(emailInfo, out var oMsg);
+            string oMsg = "";
+            var result =  EmailHelper.SendMail(emailInfo, out oMsg);
 
             return Json(new
             {
