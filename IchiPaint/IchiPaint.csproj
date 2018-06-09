@@ -242,15 +242,6 @@
     <Content Include="Areas\Admin\Scripts\sb-admin-datatables.min.js" />
     <Content Include="Areas\Admin\Scripts\sb-admin.js" />
     <Content Include="Areas\Admin\Scripts\sb-admin.min.js" />
-    <Content Include="Content\BangMau\BM_Ngoai_0001.jpg" />
-    <Content Include="Content\BangMau\BM_Ngoai_0002.jpg" />
-    <Content Include="Content\BangMau\BM_Ngoai_0003.jpg" />
-    <Content Include="Content\BangMau\BM_Ngoai_0004.jpg" />
-    <Content Include="Content\BangMau\BM_Trong_0001.jpg" />
-    <Content Include="Content\BangMau\BM_Trong_0002.jpg" />
-    <Content Include="Content\BangMau\BM_Trong_0003.jpg" />
-    <Content Include="Content\BangMau\BM_Trong_0004.jpg" />
-    <Content Include="Content\BangMau\Quat_Mau.jpg" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -1124,6 +1115,11 @@
     <Content Include="Content\Images\Banner\banner-001.jpg" />
     <Content Include="Content\Images\Banner\banner-002.jpg" />
     <Content Include="Content\Images\Banner\banner-003.jpg" />
+    <Content Include="Content\Images\Banner\banner-004.jpg" />
+    <Content Include="Content\Images\Banner\banner-005.jpg" />
+    <Content Include="Content\Images\Banner\banner-006.jpg" />
+    <Content Include="Content\Images\Banner\sanpham.jpg" />
+    <Content Include="Content\Images\Banner\tuvanmausac.jpg" />
     <Content Include="Content\Images\san-pham-khac-img.png" />
     <Content Include="Content\Images\son-bao-ve.png" />
     <Content Include="Content\Images\son-tau-bien.png" />
