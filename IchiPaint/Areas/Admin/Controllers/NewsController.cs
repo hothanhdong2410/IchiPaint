@@ -15,7 +15,7 @@ namespace IchiPaint.Areas.Admin.Controllers
         public ActionResult List()
         {
             if (DataMemory.CurrentUser == null)
-                return RedirectToAction("Logout", "Admin");
+                return Redirect("/admin/dang-xuat");
             var request = new SearchNewsRequest
             {
                 CurrentPage = 1,

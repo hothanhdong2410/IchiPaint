@@ -53,3 +53,21 @@
     padding-left: 2px;
     color: #de7676;
 }
+
+
+@media only screen and (max-width: 350px) {
+    .div-two-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+    }
+    .div-two-btn .btn {
+
+        margin-top: 10px;
+    }
+    .div-two-btn .btn > .inner {
+        width: 110px;
+        padding: 0 !important;
+    }
+}
