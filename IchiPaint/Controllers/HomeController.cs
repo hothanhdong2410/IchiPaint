@@ -15,6 +15,7 @@ namespace IchiPaint.Controllers
         private readonly ProductDA _productDa = new ProductDA();
         private readonly ProjectDa _projectDa = new ProjectDa();
         private readonly PageDA _pageDa = new PageDA();
+        private readonly ColorWarehouseDA _colorWarehouseDa = new ColorWarehouseDA();
         public ActionResult Index()
         {
             var portalSearchNews = new PortalSearchNewsIndex
@@ -27,11 +28,6 @@ namespace IchiPaint.Controllers
             var ds = _newsDa.GetForPortalDetail(portalSearchNews, ref pTotal);
 
             List<News> list = CBO<News>.FillCollectionFromDataSet(ds);
-            var listView = new ListNews
-            {
-                Collection = list
-            };
-
 
             ds = _projectDa.GetSpecial();
             List<Project> listProject = CBO<Project>.FillCollectionFromDataSet(ds);
@@ -354,7 +350,6 @@ namespace IchiPaint.Controllers
 
             var total = 0;
             var ds = _projectDa.Search(request, ref total);
-            //var lst = CBO.Fill2ListFromDataSet<Project>(ds, typeof(Project));
             List<Project> lst = CBO<Project>.FillCollectionFromDataSet(ds);
             var listProject = new ListProject()
             {
@@ -421,7 +416,27 @@ namespace IchiPaint.Controllers
             });
         }
 
-        //dich-vu/cong-cu-tinh-luong-son.htm
+         
+        [HttpGet]
+        [Route("dich-vu/kho-du-lieu-phoi-mau.htm")]
+        public ActionResult ColorWarehouse()
+        {
+
+            var request = new SearchColorWarehouseRequest()
+            {
+                Start = 1,
+                End = 1000
+            };
+
+            var total = 0;
+            var ds = _colorWarehouseDa.Search(request, ref total);
+            List<ColorWarehouse> lst = CBO<ColorWarehouse>.FillCollectionFromDataSet(ds);
+            var listColorWarehouse = new ListColorWarehouse()
+            {
+                Collection = lst
+            };
+            return View(listColorWarehouse);
+        }
 
         [HttpGet]
         [Route("dich-vu/cong-cu-tinh-luong-son.htm")]
