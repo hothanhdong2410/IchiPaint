@@ -8180,7 +8180,7 @@ ul.breadcrumb {
 }
 
 .TOA013 {
-    background: #F2F2F2 url(../images/bg-5.png) no-repeat -50px -50px;
+    background: #F2F2F2 url(../Images/bg-5.png) no-repeat -50px -50px;
     padding: 50px 0
 }
 
@@ -10591,7 +10591,8 @@ label.radio-style {
 }
 
 .color-thirdary {
-    color: #0A517B
+    /*color: #0A517B*/
+    color: #0993e4;
 }
 
 .color-white {

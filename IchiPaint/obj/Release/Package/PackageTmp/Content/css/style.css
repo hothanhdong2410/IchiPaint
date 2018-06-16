@@ -5764,9 +5764,9 @@ label.checkbox, label.radio {
         #header ul.mainmenu > li > a {
             display: block;
             margin-top: 19px;
-            color: #251463;
+            color: #0d4b8e;
             font-size: 16px;
-            font-weight: 400
+            font-weight: bold
         }
 
             #header ul.mainmenu > li > a .text {
@@ -8180,7 +8180,7 @@ ul.breadcrumb {
 }
 
 .TOA013 {
-    background: #F2F2F2 url(../images/bg-5.png) no-repeat -50px -50px;
+    background: #F2F2F2 url(../Images/bg-5.png) no-repeat -50px -50px;
     padding: 50px 0
 }
 
@@ -10591,7 +10591,8 @@ label.radio-style {
 }
 
 .color-thirdary {
-    color: #0A517B
+    /*color: #0A517B*/
+    color: #0993e4;
 }
 
 .color-white {
