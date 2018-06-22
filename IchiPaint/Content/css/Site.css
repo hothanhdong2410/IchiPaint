@@ -54,20 +54,79 @@
     color: #de7676;
 }
 
+.ichi01, .ichi02 {
+    color: #fff;
+    background-color: #fff;
+    position: relative;
+    background-size: cover;
+    line-height: 27px;
+}
 
+    .ichi01 .block_decs {
+        color: #102344;
+        font-weight: bold;
+    }
+
+    .ichi01.row-2 {
+        background-color: #FFF;
+    }
+
+        .ichi01.row-2 .btn-thirdary:after, .ichi01.row-2 .btn-thirdary:before, .ichi01.row-2 .btn-thirdary > .inner {
+            background-color: #e27335;
+            border-color: #e27335;
+        }
+
+    .ichi01 h2.color-thirdary {
+        color: #e27335;
+    }
+
+.btn-thirdary:not(.nothover):hover:after,
+.btn-thirdary:not(.nothover):hover:before,
+.btn-thirdary:not(.nothover):hover > .inner {
+    background-color: #F6DC6B;
+    border-color: #F6DC6B;
+}
+
+.ichi02 h2.color-thirdary {
+    color: #b4c2c3;
+}
+
+.ichi-description {
+    color: #9B9B9B;
+    text-transform: uppercase;
+    font-size: 33px;
+    font-weight: bold;
+    line-height: 39px;
+    text-align: center;
+    padding: 50px 0;
+}
+/*#b4c2c3*/
+/*
+.ichi02.row-2 .btn-thirdary:after, .btn-thirdary:before, .btn-thirdary > .inner {
+    background-color: #0869A2;
+    border-color: #0869A2;
+}*/
 @media only screen and (max-width: 350px) {
     .div-two-btn {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;    
+        align-items: center;
     }
-    .div-two-btn .btn {
 
-        margin-top: 10px;
-    }
-    .div-two-btn .btn > .inner {
-        width: 110px;
-        padding: 0 !important;
+        .div-two-btn .btn {
+            margin-top: 10px;
+        }
+
+            .div-two-btn .btn > .inner {
+                width: 110px;
+                padding: 0 !important;
+            }
+}
+@media (max-width: 767px) {
+    .ichi-description {
+        font-size: 26px;
+        line-height: 30px;
+        padding: 30px 0;
     }
 }
