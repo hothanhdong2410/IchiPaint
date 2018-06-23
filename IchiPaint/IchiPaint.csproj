@@ -1127,6 +1127,7 @@
     <Content Include="Content\Images\son-bao-ve.png" />
     <Content Include="Content\Images\son-tau-bien.png" />
     <Content Include="Content\Images\son-trang-tri.png" />
+    <Content Include="Content\Images\spin.svg" />
     <Content Include="Content\Upload\images\banner-.png" />
     <Content Include="Content\Upload\images\banner-1-.png" />
     <Content Include="Content\Upload\images\Logo.png" />
