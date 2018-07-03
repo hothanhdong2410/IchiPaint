@@ -1105,6 +1105,7 @@
     <Content Include="Content\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\dangtq.css" />
+    <Content Include="Content\css\icomoon\icomoonfdae.svg" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\Images\BangMau\BM_Ngoai_0001.jpg" />
     <Content Include="Content\Images\BangMau\BM_Ngoai_0002.jpg" />
@@ -1277,6 +1278,9 @@
     <Content Include="Areas\Admin\Views\ColorWarehouse\_listColor.cshtml" />
     <Content Include="Areas\Admin\Views\ColorWarehouse\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ColorWarehouse\Edit.cshtml" />
+    <Content Include="Content\css\icomoon\icomoonfdae.eot" />
+    <Content Include="Content\css\icomoon\icomoonfdae.ttf" />
+    <Content Include="Content\css\icomoon\icomoonfdae.woff" />
     <None Include="Properties\PublishProfiles\Public_Ichi.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.js" />

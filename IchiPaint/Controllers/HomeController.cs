@@ -313,6 +313,22 @@ namespace IchiPaint.Controllers
             return View(products);
         }
 
+
+        [HttpPost]
+        [Route("get-san-pham")]
+        public ActionResult GetProduct(int id)
+        {
+            DataSet ds = _productDa.GetProductById(id);
+            Products products = (Products)CBO.FillObjectFromDataSet(ds, typeof(Products));
+            return Json(new
+            {
+                img = products.Avatar,
+                name  = products.ShortName,
+                coating = products.CoatingThickness
+            });
+
+        }
+
         private ListProductsPortal GetProductPortal(SearchProductPortalRequest productPortalRequest)
         {
             var total = 0;
@@ -339,7 +355,7 @@ namespace IchiPaint.Controllers
 
         [HttpGet]
         [Route("cong-trinh-tieu-bieu.htm")]
-         
+
         public ActionResult OutstandingProject()
         {
             var request = new SearchProjectRequest
@@ -408,7 +424,7 @@ namespace IchiPaint.Controllers
 
             emailInfo.MailTo = request.Email;
             string oMsg = "";
-            var result =  EmailHelper.SendMail(emailInfo, out oMsg);
+            var result = EmailHelper.SendMail(emailInfo, out oMsg);
 
             return Json(new
             {
@@ -416,7 +432,7 @@ namespace IchiPaint.Controllers
             });
         }
 
-         
+
         [HttpGet]
         [Route("dich-vu/kho-du-lieu-phoi-mau.htm")]
         public ActionResult ColorWarehouse()
@@ -442,6 +458,26 @@ namespace IchiPaint.Controllers
         [Route("dich-vu/cong-cu-tinh-luong-son.htm")]
         public ActionResult CalculatorPaint()
         {
+            try
+            {
+                var request = new SearchProductRequest()
+                {
+                    CurrentPage = 1,
+                    Start = 1,
+                    End = 1000,
+                    OrderBy = "ShortName",
+                    OrderByType = "Asc"
+                };
+                var total = 0;
+                var ds = _productDa.SearchProduct(request, ref total);
+                var lstGroupProduct = CBO<Products>.FillCollectionFromDataSet(ds);
+
+                ViewBag.LstProduct = lstGroupProduct;
+            }
+            catch (Exception e)
+            {
+                Logger.Log.Error(e.ToString());
+            }
             return View();
         }
 

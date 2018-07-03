@@ -6,8 +6,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <input type="hidden" id="txtRecordOnPage" value="@ConfigInfo.RecordOnPage" />
-<div class=" container-fluid">
-    <input type="button" value="Tạo sản phẩm mới" id="btnCreateNews" class="btn" onclick="return  window.location.href='/Admin/Product/CreateProduct'" />
+<div class="container-fluid div-search">
+    <div class="form-inline-ht">
+        <input type="button" value="Tạo sản phẩm mới" id="btnCreateNews" class="btn" onclick="return  window.location.href='/Admin/Product/CreateProduct'" />
+    </div>
 </div>
 <div id="data_news" class="container-fluid dataTables_wrapper container-fluid">
     @Html.Partial("~/Areas/Admin/Views/Product/_listProduct.cshtml", Model)

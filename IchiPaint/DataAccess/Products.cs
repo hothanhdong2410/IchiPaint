@@ -240,7 +240,7 @@ namespace IchiPaint.DataAccess
         {
             try
             {
-                var spParameter = new SqlParameter[7];
+                var spParameter = new SqlParameter[12];
 
                 #region Set param
 
@@ -258,14 +258,12 @@ namespace IchiPaint.DataAccess
                 };
                 spParameter[1] = parameter;
 
-
                 parameter = new SqlParameter("@P_GroupId", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Input,
                     Value = request.GroupId
                 };
                 spParameter[2] = parameter;
-
 
                 parameter = new SqlParameter("@P_Description", SqlDbType.NVarChar)
                 {
@@ -274,14 +272,12 @@ namespace IchiPaint.DataAccess
                 };
                 spParameter[3] = parameter;
             
-
                 parameter = new SqlParameter("@P_Detail", SqlDbType.NVarChar)
                 {
                     Direction = ParameterDirection.Input,
                     Value = request.Detail
                 };
                 spParameter[4] = parameter;
-
 
                 parameter = new SqlParameter("@P_Avatar", SqlDbType.NVarChar)
                 {
@@ -290,19 +286,56 @@ namespace IchiPaint.DataAccess
                 };
                 spParameter[5] = parameter;
 
+                parameter = new SqlParameter("@P_CoatingThickness", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = request.Avatar
+                };
+                spParameter[6] = parameter;
+
+                parameter = new SqlParameter("@P_Features1", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = request.Features1
+                };
+                spParameter[7] = parameter;
+
+                parameter = new SqlParameter("@P_Features2", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = request.Features2
+                };
+                spParameter[8] = parameter;
+
+
+                parameter = new SqlParameter("@P_Features3", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = request.Features3
+                };
+                spParameter[9] = parameter;
+
+                parameter = new SqlParameter("@P_Features4", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = request.Features4
+                };
+                spParameter[10] = parameter;
+
+
                 parameter = new SqlParameter("@P_Return", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output,
                     Value = -1
                 };
-                spParameter[6] = parameter;
+                spParameter[11] = parameter;
 
                 #endregion
 
                 SqlHelper.ExecuteNonQuery(ConfigInfo.ConnectString, CommandType.StoredProcedure, "PROC_PRODUCT_INSERT",
                     spParameter);
 
-                return Convert.ToDecimal(spParameter[6].Value);
+                return Convert.ToDecimal(spParameter[11].Value);
             }
             catch (Exception ex)
             {
@@ -344,7 +377,7 @@ namespace IchiPaint.DataAccess
         {
             try
             {
-                var spParameter = new SqlParameter[8];
+                var spParameter = new SqlParameter[13];
 
                 #region Set param
 
@@ -398,19 +431,56 @@ namespace IchiPaint.DataAccess
                 };
                 spParameter[6] = parameter;
 
+                parameter = new SqlParameter("@P_CoatingThickness", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = model.CoatingThickness
+                };
+                spParameter[7] = parameter;
+
+
+                parameter = new SqlParameter("@P_Features1", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = model.Features1
+                };
+                spParameter[8] = parameter;
+
+                parameter = new SqlParameter("@P_Features2", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = model.Features2
+                };
+                spParameter[9] = parameter;
+
+
+                parameter = new SqlParameter("@P_Features3", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = model.Features3
+                };
+                spParameter[10] = parameter;
+
+                parameter = new SqlParameter("@P_Features4", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = model.Features4
+                };
+                spParameter[11] = parameter;
+
                 parameter = new SqlParameter("@P_Return", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output,
                     Value = -1
                 };
-                spParameter[7] = parameter;
+                spParameter[12] = parameter;
 
                 #endregion
 
                 SqlHelper.ExecuteNonQuery(ConfigInfo.ConnectString, CommandType.StoredProcedure, "PROC_PRODUCT_EDIT",
                     spParameter);
 
-                return Convert.ToDecimal(spParameter[7].Value);
+                return Convert.ToDecimal(spParameter[12].Value);
             }
             catch (Exception ex)
             {

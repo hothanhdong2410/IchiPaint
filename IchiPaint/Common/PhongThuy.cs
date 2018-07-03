@@ -92,10 +92,10 @@ namespace IchiPaint.Common
                 PhongThuyDictionary.Add(soCanChi, item);
                 start++;
 
-                Menh _Menh = new Menh
+                var _Menh = new Menh
                 {
                     Ten = item.Ten,
-                    MauTuongSinh = item.MauTuongKhac,
+                    MauTuongSinh = item.MauTuongSinh,
                     MauTuongKhac = item.MauTuongKhac
                 };
 

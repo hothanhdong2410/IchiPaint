@@ -15,6 +15,11 @@ namespace IchiPaint.Models
         public int GroupId { get; set; }
         public string Detail { get; set; }
         public string Avatar { get; set; }
+        public int CoatingThickness { get; set; }
+        public string Features1 { get; set; }
+        public string Features2 { get; set; }
+        public string Features3 { get; set; }
+        public string Features4 { get; set; }
     }
 
     public class Products : ProductsRequest
@@ -89,5 +94,4 @@ namespace IchiPaint.Models
         public decimal TotalPage { get; set; }
         public int CurrentPage { get; set; }
     }
-
 }
