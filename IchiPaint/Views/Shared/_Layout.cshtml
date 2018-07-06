@@ -1,4 +1,5 @@
-﻿<html>
+﻿@using IchiPaint.Common
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,43 +53,46 @@
 
 
 <body class="news_post vi">
-    <div id="wrapper">
-        @Html.Partial("_Header")
-        @RenderBody()
-
-        <style type="text/css">
-
-            .block-1 .item_title {
-                min-height: 56px;
-            }
-        </style>
-        <style type="text/css">
-
-            .upercase {
-                text-transform: uppercase;
-            }
-        </style>
-        @Html.Partial("_Footer")
-    </div>
-    <!-- Load Facebook SDK for JavaScript -->
-
+<div class="pinner">
+    Liên hệ với chúng tôi @ConfigInfo.ContactPhone
+</div>
+<div id="wrapper">
+    @Html.Partial("_Header")
+    @RenderBody()
 
     <style type="text/css">
-        .submit-notify {
-            font-weight: bold;
-            width: 100%;
-            text-align: center;
-        }
 
-        .clear-padding {
-            padding: 0
+        .block-1 .item_title {
+            min-height: 56px;
         }
     </style>
-    <script type='text/javascript' src='~/Scripts/owl.carousel.min.js'></script>
-    <script type='text/javascript' src='~/Scripts/bootstrap.min.js'></script>
-    <script type='text/javascript' src='~/Scripts/imagesloaded.pkgd.min.js'></script>
-    <script type="text/javascript" src="~/Scripts/chosen.jquery.js"></script>
-    <script type='text/javascript' src='~/Scripts/script.js'></script>
-    <script type='text/javascript' src="~/Scripts/axios.min.js"></script>
+    <style type="text/css">
+
+        .upercase {
+            text-transform: uppercase;
+        }
+    </style>
+    @Html.Partial("_Footer")
+</div>
+<!-- Load Facebook SDK for JavaScript -->
+
+
+<style type="text/css">
+    .submit-notify {
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+    }
+
+    .clear-padding {
+        padding: 0
+    }
+</style>
+<script type='text/javascript' src='~/Scripts/owl.carousel.min.js'></script>
+<script type='text/javascript' src='~/Scripts/bootstrap.min.js'></script>
+<script type='text/javascript' src='~/Scripts/imagesloaded.pkgd.min.js'></script>
+<script type="text/javascript" src="~/Scripts/chosen.jquery.js"></script>
+<script type='text/javascript' src='~/Scripts/script.js'></script>
+<script type='text/javascript' src="~/Scripts/axios.min.js"></script>
 </body>
 </html>

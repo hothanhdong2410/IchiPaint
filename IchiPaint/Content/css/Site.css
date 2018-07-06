@@ -157,3 +157,15 @@
     }
     /*#da8844*/
 }
+
+.pinner {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    background-color: #251463;
+    color: white;
+    padding: 10px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

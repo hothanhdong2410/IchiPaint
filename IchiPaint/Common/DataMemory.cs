@@ -37,6 +37,7 @@ namespace IchiPaint.Common
         public static string ProductTemplate { get; set; }
 
         public static string EmailTemplate { get; set; }
+        public static string ContactPhone { get; set; }
         public static void GetConfig()
         {
             try
@@ -67,7 +68,7 @@ namespace IchiPaint.Common
                     IsSsl = ConfigurationManager.AppSettings.Get("SSL") == "Y"
                 };
 
-
+                ContactPhone = ConfigurationManager.AppSettings.Get("ContactPhone");
             }
             catch (Exception ex)
             {
