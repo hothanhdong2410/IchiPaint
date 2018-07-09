@@ -216,28 +216,7 @@ namespace IchiPaint.Controllers
             list.Router = "son-ngoai-that";
             return View("Products", list);
         }
-
-        // bỏ
-        //[HttpGet]
-        //[Route("san-pham/son-tau-bien.htm")]
-        //public ActionResult PaintingShip()
-        //{
-        //    var key = 9;
-        //    var request = new SearchProductPortalRequest()
-        //    {
-        //        CurrentPage = 1,
-        //        Start = 1,
-        //        End = ConfigInfo.RecordOnPageIndex,
-        //        GroupId = key,
-        //        OrderBy = "Id",
-        //        OrderByType = "Desc",
-        //        GroupName = "Sơn tàu biển"
-        //    };
-
-        //    var list = GetProductPortal(request);
-        //    list.Router = "son-tau-bien";
-        //    return View("Products", list);
-        //}
+ 
 
         [HttpGet]
         [Route("san-pham/san-pham-khac.htm")]
@@ -513,6 +492,15 @@ namespace IchiPaint.Controllers
             var model = GetById(3);
             return View(model);
         }
+
+        [HttpGet]
+        [Route("tuyen-dung.htm")]
+        public ActionResult Recruitment()
+        {
+            var model = GetById(4);
+            return View(model);
+        }
+        
 
         private Page GetById(int id)
         {

@@ -169,3 +169,8 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
+#header ul.mainmenu > li > a .text, #header ul.mainmenu ul li.active > a,
+#header ul.mainmenu ul li:hover > a {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}

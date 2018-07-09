@@ -19,13 +19,13 @@
     <div class="container">
         <div class="page-list-news">
             <div class="feature-post block-3" style="    margin-top: 50px;">
-                <div class="item">
+                <div class="item"  style="background: url('@specialNews.FeatureImage'); background-size: 100% 100%; background-repeat: no-repeat;">
                     @{
                         var urlSpecial = string.Format(baseUrl, specialNews.Id, HtmlControllHelpers.ReplaceUnicodeUrl(specialNews.Title));
                     }
 
                     <a href="@urlSpecial" class="item_img">
-                        <img src="@specialNews.FeatureImage" alt="@specialNews.Title">
+                        @*<img src="@specialNews.FeatureImage" alt="@specialNews.Title">*@
                     </a>
                     <div class="item_content">
                         <a href="@urlSpecial" class="item_title">
