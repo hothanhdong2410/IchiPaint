@@ -35,9 +35,10 @@ namespace IchiPaint.Common
         public static int RecordOnPage = 10;
         public static int RecordOnPageIndex = 5;
         public static string ProductTemplate { get; set; }
-
         public static string EmailTemplate { get; set; }
         public static string ContactPhone { get; set; }
+        public static string EmailBusiness { get; set; }
+
         public static void GetConfig()
         {
             try
@@ -47,13 +48,11 @@ namespace IchiPaint.Common
                 RecordOnPage = Convert.ToInt32(ConfigurationManager.AppSettings.Get("RecordOnPage"));
                 RecordOnPageIndex = Convert.ToInt32(ConfigurationManager.AppSettings.Get("RecordOnPageIndex"));
                 ConnectString = ConfigurationManager.AppSettings.Get("ConnectString");
-
+                EmailBusiness = ConfigurationManager.AppSettings.Get("EmailBusiness");
                 var fileTemplate = HttpRuntime.AppDomainAppPath + "\\Template\\Product.html";
                 ProductTemplate = File.ReadAllText(fileTemplate);
-
                 fileTemplate = HttpRuntime.AppDomainAppPath + "\\Template\\Menh.xls";
                 DataMemory.PhongThuy = new PhongThuy(fileTemplate);
-
                 fileTemplate = HttpRuntime.AppDomainAppPath + "\\Template\\DangKyTuVan.html";
                 EmailTemplate = File.ReadAllText(fileTemplate);
 

@@ -1103,7 +1103,9 @@
     <Content Include="Content\ckfinder\skins\v1\skin.js" />
     <Content Include="Content\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Content\ckfinder\translations.txt" />
+    <Content Include="Content\css\component.css" />
     <Content Include="Content\css\dangtq.css" />
+    <Content Include="Content\css\default.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\Images\BangMau\BM_Ngoai_0001.jpg" />
     <Content Include="Content\Images\BangMau\BM_Ngoai_0002.jpg" />
@@ -1120,6 +1122,7 @@
     <Content Include="Content\Images\Banner\banner-004.jpg" />
     <Content Include="Content\Images\Banner\banner-005.jpg" />
     <Content Include="Content\Images\Banner\banner-006.jpg" />
+    <Content Include="Content\Images\Banner\banner-014.png" />
     <Content Include="Content\Images\Banner\sanpham.jpg" />
     <Content Include="Content\Images\Banner\tuvanmausac.jpg" />
     <Content Include="Content\Images\san-pham-khac-img.png" />
@@ -1288,6 +1291,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.cbpFWSlider.js" />
+    <Content Include="Scripts\jquery.cbpFWSlider.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -1295,6 +1300,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jssor.slider-27.1.0.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\select2.min.js" />

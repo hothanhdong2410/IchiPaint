@@ -280,9 +280,6 @@ namespace IchiPaint.Controllers
             return View("Products", list);
         }
 
-        ///san-pham-chi-tiet/{0}/{1}
-
-
         [HttpGet]
         [Route("san-pham-chi-tiet/{id}/{htm}")]
         public ActionResult ProductDetail(int id, string index)
@@ -356,7 +353,6 @@ namespace IchiPaint.Controllers
 
         #region Phong thủy
 
-
         [HttpGet]
         [Route("dich-vu/xem-mau-phong-thuy.htm")]
         public ActionResult PhongThuy()
@@ -401,7 +397,7 @@ namespace IchiPaint.Controllers
             emailInfo.Content = string.Format(ConfigInfo.EmailTemplate, request.FullName, request.Phone, request.Email,
                 request.AppointmentDate, request.Content);
 
-            emailInfo.MailTo = request.Email;
+            emailInfo.MailTo = ConfigInfo.EmailBusiness;
             string oMsg = "";
             var result = EmailHelper.SendMail(emailInfo, out oMsg);
 
@@ -466,7 +462,6 @@ namespace IchiPaint.Controllers
         {
             return View();
         }
-
 
 
         [HttpGet]
