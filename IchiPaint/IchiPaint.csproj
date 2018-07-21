@@ -1125,6 +1125,7 @@
     <Content Include="Content\Images\Banner\banner-014.png" />
     <Content Include="Content\Images\Banner\sanpham.jpg" />
     <Content Include="Content\Images\Banner\tuvanmausac.jpg" />
+    <Content Include="Content\Images\phong-thuy.jpeg" />
     <Content Include="Content\Images\san-pham-khac-img.png" />
     <Content Include="Content\Images\son-bao-ve.png" />
     <Content Include="Content\Images\son-tau-bien.png" />

@@ -12,40 +12,44 @@
                     Xem màu phong thủy
                 </span>
             </h2>
-            <div>
-                <div class="form-group row">
-                    <label for="txtYear" class="col-sm-3 col-form-label">Chọn năm sinh</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="txtYear" onkeypress="return isNumber(event)" />
+            <div class="row ">
+                <div class="col-sm-9">
+                    <div class="form-group row">
+                        <label for="txtYear" class="col-sm-3 col-form-label">Chọn năm sinh</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="txtYear" onkeypress="return isNumber(event)"/>
+                        </div>
+                        <div class="col-sm-3 col-form-label">
+                            <input style="padding: 0 20px" type="button" value="Tra cứu" onclick="tinhToanPhongThuy()"/>
+                        </div>
                     </div>
-                    <div class="col-sm-3 col-form-label">
-                        <input style="padding: 0 20px" type="button" value="Tra cứu" onclick="tinhToanPhongThuy()" />
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Can chi</label>
+                        <div class="col-sm-7">
+                            <span id="txtCanChi"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mệnh</label>
+                        <div class="col-sm-7">
+                            <span id="txtMenh"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Màu tương sinh</label>
+                        <div class="col-sm-7">
+                            <span id="txtMauTuongSinh"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Màu tương khắc</label>
+                        <div class="col-sm-7">
+                            <span id="txtMauTuongKhac"></span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Can chi</label>
-                    <div class="col-sm-7">
-                        <span id="txtCanChi"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Mệnh</label>
-                    <div class="col-sm-7">
-                        <span id="txtMenh"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Màu tương sinh</label>
-                    <div class="col-sm-7">
-                        <span id="txtMauTuongSinh"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Màu tương khắc</label>
-                    <div class="col-sm-7">
-                        <span id="txtMauTuongKhac"></span>
-                    </div>
+                <div class="col-sm-3">
+                    <img src="~/Content/Images/phong-thuy.jpeg" />
                 </div>
             </div>
         </div>
