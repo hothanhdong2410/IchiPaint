@@ -89,7 +89,7 @@
         }
 
     .ichi01 h2.color-thirdary {
-        color: #e27335;
+        color: #fff;
     }
 
 .btn-thirdary:not(.nothover):hover:after,
@@ -100,8 +100,12 @@
 }
 
 .ichi02 h2.color-thirdary {
-    color: #b4c2c3;
+    color: #fff;
 }
+.ichi02 .block_decs {
+        color: #102344;
+        font-weight: bold;
+    }
 
 .ichi-description {
     color: #294a28;
