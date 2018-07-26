@@ -41,16 +41,22 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var result = _projectDa.Create(request);
             if (result > 0)
+            {
+                DataMemory.LoadProject();
                 return Json(new
                 {
                     Status = true,
                     Message = "Tạo công trình thành công"
                 });
-            return Json(new
+            }
+            else
             {
-                Status = false,
-                Message = "Tạo công trình thất bại"
-            });
+                return Json(new
+                {
+                    Status = false,
+                    Message = "Tạo công trình thất bại"
+                });
+            }
         }
 
         [HttpGet]
@@ -69,16 +75,22 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var result = _projectDa.Edit(request);
             if (result > 0)
+            {
+                DataMemory.LoadProject();
                 return Json(new
                 {
                     Status = true,
                     Message = "Sửa công trình thành công"
                 });
-            return Json(new
+            }
+            else
             {
-                Status = false,
-                Message = "Sửa công trình thất bại"
-            });
+                return Json(new
+                {
+                    Status = false,
+                    Message = "Sửa công trình thất bại"
+                });
+            }
         }
 
         [HttpPost]
@@ -86,16 +98,22 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var result = _projectDa.Delete(id);
             if (result > 0)
+            {
+                DataMemory.LoadProject();
                 return Json(new
                 {
                     Status = true,
                     Message = "Xóa thành công"
                 });
-            return Json(new
+            }
+            else
             {
-                Status = false,
-                Message = "Xóa thất bại"
-            });
+                return Json(new
+                {
+                    Status = false,
+                    Message = "Xóa thất bại"
+                });
+            }
         }
 
         [HttpPost]

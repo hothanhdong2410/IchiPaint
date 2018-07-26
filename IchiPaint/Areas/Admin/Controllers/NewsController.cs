@@ -41,16 +41,22 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var ketqua = _newsDa.Create(model);
             if (ketqua > 0)
+            {
+                DataMemory.LoadNews();
                 return Json(new
                 {
                     Status = true,
                     Message = "Tạo tin mới thành công"
                 });
-            return Json(new
+            }
+            else
             {
-                Status = false,
-                Message = "Tạo tin mới thất bại"
-            });
+                return Json(new
+                {
+                    Status = false,
+                    Message = "Tạo tin mới thất bại"
+                });
+            }
         }
 
         [HttpPost]
@@ -64,7 +70,7 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             if (DataMemory.CurrentUser == null)
                 return RedirectToAction("Logout", "Admin");
-            var news = (News) CBO.FillObjectFromDataSet(_newsDa.GetById(id), typeof(News));
+            var news = (News)CBO.FillObjectFromDataSet(_newsDa.GetById(id), typeof(News));
 
             return View("~/Areas/Admin/Views/News/Edit.cshtml", news);
         }
@@ -74,16 +80,22 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var result = _newsDa.Edit(request);
             if (result > 0)
+            {
+                DataMemory.LoadNews();
                 return Json(new
                 {
                     Status = true,
                     Message = "Sửa bài viết thành công"
                 });
-            return Json(new
+            }
+            else
             {
-                Status = false,
-                Message = "Sửa bài viết thất bại"
-            });
+                return Json(new
+                {
+                    Status = false,
+                    Message = "Sửa bài viết thất bại"
+                });
+            }
         }
 
         [HttpPost]
@@ -91,16 +103,22 @@ namespace IchiPaint.Areas.Admin.Controllers
         {
             var result = _newsDa.Delete(id);
             if (result > 0)
+            {
+                DataMemory.LoadNews();
                 return Json(new
                 {
                     Status = true,
                     Message = "Xóa thành công"
                 });
-            return Json(new
+            }
+            else
             {
-                Status = false,
-                Message = "Xóa thất bại"
-            });
+                return Json(new
+                {
+                    Status = false,
+                    Message = "Xóa thất bại"
+                });
+            }
         }
 
         private ListNews SearchNews(SearchNewsRequest request)
@@ -108,7 +126,7 @@ namespace IchiPaint.Areas.Admin.Controllers
             var total = 0;
             var ds = _newsDa.Search(request, ref total);
             var lstNew = CBO<News>.FillCollectionFromDataSet(ds);
-            var totalPage = Math.Ceiling(total / (decimal) ConfigInfo.RecordOnPage);
+            var totalPage = Math.Ceiling(total / (decimal)ConfigInfo.RecordOnPage);
             var paging = HtmlControllHelpers.WritePaging(totalPage, request.CurrentPage, total, ConfigInfo.RecordOnPage,
                 "Tin tức");
             var listNews = new ListNews

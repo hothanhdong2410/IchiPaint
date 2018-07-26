@@ -18,6 +18,8 @@ namespace IchiPaint
 
 
             ConfigInfo.GetConfig();
+
+            DataMemory.LoadDbMem();
         }
     }
 }

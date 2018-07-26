@@ -3,11 +3,102 @@ using System.Configuration;
 using System.IO;
 using System.Web;
 using IchiPaint.Models;
+using System.Collections.Generic;
+using IchiPaint.DataAccess;
+using System.Data;
+using System.Linq;
 
 namespace IchiPaint.Common
 {
     public class DataMemory
     {
+        public static List<News> c_lstNew = new List<News>();
+        public static List<Project> c_lstProject = new List<Project>();
+        public static List<Page> c_lstPage = new List<Page>();
+        
+        public static void LoadDbMem()
+        {
+            try
+            {
+                LoadNews();
+
+                LoadProject();
+
+                LoadPage();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Error(ex.ToString());
+            }
+        }
+
+        public static void LoadNews()
+        {
+            try
+            {
+                NewsDA _newsDa = new NewsDA();
+
+                var portalSearchNews = new PortalSearchNewsIndex
+                {
+                    Start = 1,
+                    End = 0,
+                    Id = 0
+                };
+                var pTotal = 0;
+                var ds = _newsDa.GetForPortalDetail(portalSearchNews, ref pTotal);
+
+                c_lstNew = CBO<News>.FillCollectionFromDataSet(ds);
+                c_lstNew = c_lstNew.OrderByDescending(m => m.Id).ToList();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Error(ex.ToString());
+            }
+        }
+
+        public static void LoadProject()
+        {
+            try
+            {
+                var request = new SearchProjectRequest
+                {
+                    Start = 1,
+                    End = 0
+                };
+                var pTotal = 0;
+                ProjectDa _ProjectDa = new ProjectDa();
+                DataSet ds = _ProjectDa.Search(request,ref pTotal);
+                c_lstProject = CBO<Project>.FillCollectionFromDataSet(ds);
+                c_lstProject = c_lstProject.OrderByDescending(m => m.Id).ToList();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Error(ex.ToString());
+            }
+        }
+
+        public static void LoadPage()
+        {
+            try
+            {
+                var request = new SearchProjectRequest
+                {
+                    Start = 1,
+                    End = 0
+                };
+                var pTotal = 0;
+                PageDA _da = new PageDA();
+                DataSet ds = _da.Search(request, ref pTotal);
+                c_lstPage = CBO<Page>.FillCollectionFromDataSet(ds);
+                c_lstPage = c_lstPage.OrderByDescending(m => m.Id).ToList();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Error(ex.ToString());
+            }
+        }
+
+
         public static PhongThuy PhongThuy { get; set; }
 
 
@@ -20,7 +111,10 @@ namespace IchiPaint.Common
                 else
                     return (User)HttpContext.Current.Session["UserInfo"];
             }
-            set => HttpContext.Current.Session["UserInfo"] = value;
+            set
+            {
+                HttpContext.Current.Session["UserInfo"] = value;
+            }
         }
 
         public static EmailInfo EmailOriginal { get; set; }
@@ -72,7 +166,6 @@ namespace IchiPaint.Common
             catch (Exception ex)
             {
                 Logger.Log.Error(ex.ToString());
-                throw;
             }
         }
     }

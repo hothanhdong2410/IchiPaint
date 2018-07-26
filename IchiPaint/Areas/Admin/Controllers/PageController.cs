@@ -57,7 +57,7 @@ namespace IchiPaint.Areas.Admin.Controllers
             try
             {
                 var result = _pageDa.Edit(request);
-
+                DataMemory.LoadPage();
                 return Json(new
                 {
                     Status = result > 0

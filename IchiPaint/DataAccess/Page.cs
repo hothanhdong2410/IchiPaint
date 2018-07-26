@@ -155,62 +155,41 @@ namespace IchiPaint.DataAccess
             }
         }
 
-        public DataSet Search(SearchNewsRequest model, ref int pTotal)
+        public DataSet Search(SearchProjectRequest model, ref int pTotal)
         {
             try
             {
-                var spParameter = new SqlParameter[6];
+                var spParameter = new SqlParameter[3];
 
                 #region Set param
 
-                var parameter = new SqlParameter("@P_ORDER_BY", SqlDbType.VarChar)
-                {
-                    Direction = ParameterDirection.Input,
-                    Value = model.OrderBy
-                };
-                spParameter[0] = parameter;
-
-                parameter = new SqlParameter("@P_ORDER_TYPE", SqlDbType.VarChar)
-                {
-                    Direction = ParameterDirection.Input,
-                    Value = model.OrderByType
-                };
-                spParameter[1] = parameter;
-
-                parameter = new SqlParameter("@P_START", SqlDbType.VarChar)
+                var parameter = new SqlParameter("@P_START", SqlDbType.VarChar)
                 {
                     Direction = ParameterDirection.Input,
                     Value = model.Start
                 };
-                spParameter[2] = parameter;
+                spParameter[0] = parameter;
 
                 parameter = new SqlParameter("@P_END", SqlDbType.VarChar)
                 {
                     Direction = ParameterDirection.Input,
                     Value = model.End
                 };
-                spParameter[3] = parameter;
-
-                parameter = new SqlParameter("@P_CREATE_DATE", SqlDbType.VarChar)
-                {
-                    Direction = ParameterDirection.Input,
-                    Value = model.CreateDate
-                };
-                spParameter[4] = parameter;
+                spParameter[1] = parameter;
 
                 parameter = new SqlParameter("@P_TOTAL", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output,
                     Value = -1
                 };
-                spParameter[5] = parameter;
+                spParameter[2] = parameter;
 
                 #endregion
 
                 var ds = SqlHelper.ExecuteDataset(ConfigInfo.ConnectString, CommandType.StoredProcedure,
                     "PROC_PAGE_SEARCH", spParameter);
 
-                pTotal = Convert.ToInt32(spParameter[5].Value);
+                pTotal = Convert.ToInt32(spParameter[2].Value);
 
                 return ds;
             }

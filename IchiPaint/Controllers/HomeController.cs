@@ -6,6 +6,7 @@ using IchiPaint.Common;
 using IchiPaint.DataAccess;
 using IchiPaint.Helpers;
 using IchiPaint.Models;
+using System.Linq;
 
 namespace IchiPaint.Controllers
 {
@@ -16,21 +17,11 @@ namespace IchiPaint.Controllers
         private readonly ProjectDa _projectDa = new ProjectDa();
         private readonly PageDA _pageDa = new PageDA();
         private readonly ColorWarehouseDA _colorWarehouseDa = new ColorWarehouseDA();
+
         public ActionResult Index()
         {
-            var portalSearchNews = new PortalSearchNewsIndex
-            {
-                Start = 1,
-                End = 4,
-                Id = 0
-            };
-            var pTotal = 0;
-            var ds = _newsDa.GetForPortalDetail(portalSearchNews, ref pTotal);
-
-            List<News> list = CBO<News>.FillCollectionFromDataSet(ds);
-
-            ds = _projectDa.GetSpecial();
-            List<Project> listProject = CBO<Project>.FillCollectionFromDataSet(ds);
+            List<News> list = DataMemory.c_lstNew.OrderByDescending(i => i.Id).Take(4).ToList();
+            List<Project> listProject = DataMemory.c_lstProject.FindAll(i => i.Special == "Y").ToList();
 
             var indexPortal = new IndexPortal()
             {
@@ -216,7 +207,7 @@ namespace IchiPaint.Controllers
             list.Router = "son-ngoai-that";
             return View("Products", list);
         }
- 
+
 
         [HttpGet]
         [Route("san-pham/san-pham-khac.htm")]
@@ -299,7 +290,7 @@ namespace IchiPaint.Controllers
             return Json(new
             {
                 img = products.Avatar,
-                name  = products.ShortName,
+                name = products.ShortName,
                 coating = products.CoatingThickness
             });
 
@@ -334,18 +325,18 @@ namespace IchiPaint.Controllers
 
         public ActionResult OutstandingProject()
         {
-            var request = new SearchProjectRequest
-            {
-                Start = 1,
-                End = 1000
-            };
+            //var request = new SearchProjectRequest
+            //{
+            //    Start = 1,
+            //    End = 1000
+            //};
 
-            var total = 0;
-            var ds = _projectDa.Search(request, ref total);
-            List<Project> lst = CBO<Project>.FillCollectionFromDataSet(ds);
+            //var total = 0;
+            //var ds = _projectDa.Search(request, ref total);
+            //List<Project> lst = CBO<Project>.FillCollectionFromDataSet(ds);
             var listProject = new ListProject()
             {
-                Collection = lst
+                Collection = DataMemory.c_lstProject
             };
             return View(listProject);
         }
@@ -495,15 +486,18 @@ namespace IchiPaint.Controllers
             var model = GetById(4);
             return View(model);
         }
-        
+
 
         private Page GetById(int id)
         {
             try
             {
-                var ds = _pageDa.GetById(id);
-                var page = (Page)CBO.FillObjectFromDataSet(ds, typeof(Page));
-                return page;
+                //var ds = _pageDa.GetById(id);
+                //var page = (Page)CBO.FillObjectFromDataSet(ds, typeof(Page));
+                //return page;
+
+                Page _page = DataMemory.c_lstPage.Find(m => m.Id == id);
+                return _page;
             }
             catch (Exception e)
             {
