@@ -7,3 +7,7 @@
 /IchiPaint/obj/Debug
 IchiPaint/node_modules/
 IchiPaint/Content/ckeditor/
+*.cache
+IchiPaint/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
+*.jpg

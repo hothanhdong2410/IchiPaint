@@ -18,6 +18,27 @@
                         <a href="@url" class="item_title">
                             @item.ShortName
                         </a>
+                        
+                        <ul class="list-check primary">
+                            
+                            @if (!string.IsNullOrEmpty(item.Features1))
+                            {
+                                <li>@item.Features1</li>
+                            }
+                            
+                            @if (!string.IsNullOrEmpty(item.Features2))
+                            {
+                                <li>@item.Features2</li>
+                            }
+                            @if (!string.IsNullOrEmpty(item.Features3))
+                            {
+                                <li>@item.Features3</li>
+                            }
+                            @if (!string.IsNullOrEmpty(item.Features4))
+                            {
+                                <li>@item.Features4</li>
+                            }
+                        </ul>
                     </div>
                 </div>
 

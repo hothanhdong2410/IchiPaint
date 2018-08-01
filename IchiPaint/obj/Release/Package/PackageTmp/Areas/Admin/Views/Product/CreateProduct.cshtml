@@ -7,6 +7,7 @@
 
 <script src="~/Content/ckeditor/ckeditor.js"></script>
 <script src="~/Content/ckfinder/ckfinder.js"></script>
+<script src="~/Scripts/Validate.js"></script>
 <input type="hidden" id="txtTemplate" value="@ConfigInfo.ProductTemplate" />
 <div class="container-fluid">
     <div class="form-group row">
@@ -28,6 +29,34 @@
         </div>
     </div>
     <div class="form-group row">
+        <label for="txtDescription" class="col-sm-2 col-form-label">Diện tích phủ</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="txtCoatingThickness"  onkeypress="return isNumber(event)"/>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="txtDescription" class="col-sm-2 col-form-label">Tính năng</label>
+        <div class="col-sm-10">
+            <div class="wrap-content option-product" style="padding: 0px 15px;">
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures1" placeholder="Tính năng 1" />
+                </div>
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures2" placeholder="Tính năng 2" />
+                </div>
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures3"placeholder="Tính năng 3"  />
+                </div>
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures4" placeholder="Tính năng 4" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="form-group row">
         <label for="txtAvatar" class="col-sm-2 col-form-label">Ảnh đại diện</label>
         <div class="col-sm-10">
             <img id="imgAvatar" src="/Content/Images/img-not-available.jpg" style="width: 100px; height: 100px" />
@@ -36,7 +65,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label  class="col-sm-2 col-form-label">Nhóm</label>
+        <label class="col-sm-2 col-form-label">Nhóm</label>
         <div class="col-sm-3">
             <select class="form-control" id="slGroupId">
                 <option value="0">Chọn nhóm</option>
@@ -94,7 +123,12 @@
             detail: editor.getData(),
             avatar: $('#txtAvatar').val(),
             description: $('#txtDescription').val(),
-            groupId: $('#slGroupId').val()
+            groupId: $('#slGroupId').val(),
+            coatingThickness: $('#txtCoatingThickness').val(),
+            features1: $('#txtFeatures1').val(),
+            features2: $('#txtFeatures2').val(),
+            features3: $('#txtFeatures3').val(),
+            features4: $('#txtFeatures4').val()
         };
 
         axios.post("/Product/CreateProduct", request).then(function (response) {

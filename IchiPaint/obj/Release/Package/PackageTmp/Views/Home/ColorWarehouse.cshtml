@@ -4,17 +4,35 @@
     ViewBag.Title = "Kho dữ liệu phối màu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div id="main_container">
-    <div class="container">
-        <h2 class="color-main text-center" style="margin-bottom: 45px; margin-top: 45px;">
-            <span> Kho dữ liệu phối màu </span>
-        </h2>
-    </div>
 
-    <div class="max-830">
-        @foreach (var item in Model.Collection)
-        {
-            <img  src="@item.Avatar" />
-        }
+<link href="~/Content/css/default.css" rel="stylesheet" />
+<link href="~/Content/css/component.css" rel="stylesheet" />
+<script src="~/Scripts/modernizr.custom.js"></script>
+
+<h2 class="color-main text-center" style="margin-bottom: 45px; margin-top: 45px;">
+    <span>
+        Kho dữ liệu phối màu
+    </span>
+</h2>
+
+<div class="container">
+    <div id="cbp-fwslider" class="cbp-fwslider">
+        <ul>
+            @foreach (var item in Model.Collection)
+            {
+                <li><a href="#"><img src="@item.Avatar" alt="img01" /></a></li>
+            }
+        </ul>
     </div>
 </div>
+
+<script src="~/Scripts/jquery.min.js"></script>
+@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
+<script src="~/Scripts/jquery.cbpFWSlider.min.js"></script>
+
+<script>
+    $(function () {
+        $('#cbp-fwslider').cbpFWSlider();
+
+    });
+</script>

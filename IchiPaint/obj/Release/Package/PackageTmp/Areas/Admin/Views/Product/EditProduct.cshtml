@@ -8,6 +8,7 @@
 
 <script src="~/Content/ckeditor/ckeditor.js"></script>
 <script src="~/Content/ckfinder/ckfinder.js"></script>
+<script src="~/Scripts/Validate.js"></script>
 
 <input type="hidden" id="txtId" value="@Model.Id" />
 <input type="hidden" id="txtCurrentContent" value="@Model.Detail" />
@@ -29,6 +30,31 @@
         <label for="txtDescription" class="col-sm-2 col-form-label">Mô tả</label>
         <div class="col-sm-10">
             <textarea class="form-control" rows="5" id="txtDescription">@Model.Description</textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtDescription" class="col-sm-2 col-form-label">Diện tích phủ</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="txtCoatingThickness" onkeypress="return isNumber(event)" value="@Model.CoatingThickness" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtDescription" class="col-sm-2 col-form-label">Tính năng</label>
+        <div class="col-sm-10">
+            <div class="wrap-content option-product" style="padding: 0px 15px;">
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures1" placeholder="Tính năng 1" value="@Model.Features1" />
+                </div>
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures2" placeholder="Tính năng 2" value="@Model.Features2" />
+                </div>
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures3" placeholder="Tính năng 3" value="@Model.Features3" />
+                </div>
+                <div class="form-group row">
+                    <input type="text" class="form-control" id="txtFeatures4" placeholder="Tính năng 4" value="@Model.Features4" />
+                </div>
+            </div>
         </div>
     </div>
     <div class="form-group row">
@@ -114,7 +140,12 @@
             detail: editor1.getData(),
             avatar: $('#txtAvatar').val(),
             description: $('#txtDescription').val(),
-            groupId: $('#slGroupId').val()
+            groupId: $('#slGroupId').val(),
+            coatingThickness: $('#txtCoatingThickness').val(),
+            features1: $('#txtFeatures1').val(),
+            features2: $('#txtFeatures2').val(),
+            features3: $('#txtFeatures3').val(),
+            features4: $('#txtFeatures4').val()
         };
         lockSubmit = true;
         axios.post("/Product/EditProduct", request).then(function (response) {

@@ -7991,8 +7991,8 @@ ul.breadcrumb {
     }
 
 #slideshow .owl-nav > div:not(:hover) {
-    border-color: #fff;
-    color: #fff
+    border-color: #d20b0b;
+    color: #d20b0b
 }
 
 #slideshow .owl-nav > div.owl-prev {
@@ -8179,17 +8179,17 @@ ul.breadcrumb {
     padding: 50px 0
 }
 
-.TOA013 {
+.ichi013 {
     background: #F2F2F2 url(../Images/bg-5.png) no-repeat -50px -50px;
     padding: 50px 0
 }
 
-    .TOA013 .block-1 .item:not(:hover) {
+    .ichi013 .block-1 .item:not(:hover) {
         -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5)
     }
 
-    .TOA013 .block-1 .item_content {
+    .ichi013 .block-1 .item_content {
         background-color: #fff
     }
 
