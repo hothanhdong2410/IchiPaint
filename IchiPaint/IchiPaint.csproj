@@ -1125,7 +1125,6 @@
     <Content Include="Content\Images\Banner\banner-015.png" />
     <Content Include="Content\Images\Banner\sanpham.png" />
     <Content Include="Content\Images\Banner\tuvanmausac.png" />
-    <Content Include="Content\Images\phong-thuy.jpeg" />
     <Content Include="Content\Images\spin.svg" />
     <Content Include="Content\Upload\images\banner-.png" />
     <Content Include="Content\Upload\images\banner-1-.png" />
@@ -1346,6 +1345,7 @@
     <Content Include="Views\Home\ColorBoard_QuatMau.cshtml" />
     <Content Include="Views\Home\ColorWarehouse.cshtml" />
     <Content Include="Views\Home\Recruitment.cshtml" />
+    <Content Include="Views\Home\ProductCertification_bk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
