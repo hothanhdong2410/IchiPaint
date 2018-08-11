@@ -20,7 +20,7 @@ namespace IchiPaint.Controllers
 
         public ActionResult Index()
         {
-            List<News> list = DataMemory.c_lstNew.OrderByDescending(i => i.Id).Take(4).ToList();
+            List<News> list = DataMemory.c_lstNew.OrderByDescending(i => i.Special).ThenByDescending(i => i.Id).Take(4).ToList();
             List<Project> listProject = DataMemory.c_lstProject.FindAll(i => i.Special == "Y").ToList();
 
             var indexPortal = new IndexPortal()
