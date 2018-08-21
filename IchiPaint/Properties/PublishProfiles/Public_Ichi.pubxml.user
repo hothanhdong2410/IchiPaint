@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\OS-WIN10\Desktop\WebSite</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\dangt\Desktop\Public_Ichi</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -277,7 +277,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="Areas/Admin/Views/News/Edit.cshtml">
-      <publishTime>06/05/2018 22:21:25</publishTime>
+      <publishTime>08/11/2018 15:59:16</publishTime>
     </File>
     <File Include="Areas/Admin/Views/News/List.cshtml">
       <publishTime>06/08/2018 10:28:12</publishTime>
@@ -301,13 +301,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Product/CreateProduct.cshtml">
-      <publishTime>07/05/2018 00:04:55</publishTime>
+      <publishTime>08/21/2018 17:20:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Product/EditGroup.cshtml">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Product/EditProduct.cshtml">
-      <publishTime>07/05/2018 00:04:55</publishTime>
+      <publishTime>08/21/2018 17:20:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Product/GroupList.cshtml">
       <publishTime>06/05/2018 22:21:25</publishTime>
@@ -364,7 +364,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="bin/IchiPaint.dll">
-      <publishTime>07/26/2018 23:43:41</publishTime>
+      <publishTime>08/21/2018 17:23:03</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>07/05/2018 00:04:55</publishTime>
@@ -3232,46 +3232,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/26/2018 23:35:00</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>07/10/2018 00:13:08</publishTime>
+      <publishTime>08/03/2018 22:18:32</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Ngoai_0001.jpg">
-      <publishTime>06/22/2018 22:49:37</publishTime>
+      <publishTime>08/01/2018 16:44:48</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Ngoai_0002.jpg">
-      <publishTime>06/22/2018 22:49:45</publishTime>
+      <publishTime>08/01/2018 16:44:52</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Ngoai_0003.jpg">
-      <publishTime>06/22/2018 22:49:52</publishTime>
+      <publishTime>08/01/2018 16:44:55</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Ngoai_0004.jpg">
-      <publishTime>06/22/2018 22:49:58</publishTime>
+      <publishTime>08/01/2018 16:44:45</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Trong_0001.jpg">
-      <publishTime>06/22/2018 22:55:52</publishTime>
+      <publishTime>08/01/2018 16:45:23</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Trong_0002.jpg">
-      <publishTime>06/22/2018 22:56:00</publishTime>
+      <publishTime>08/01/2018 16:45:17</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Trong_0003.jpg">
-      <publishTime>06/22/2018 22:56:12</publishTime>
+      <publishTime>08/01/2018 16:45:20</publishTime>
     </File>
     <File Include="Content/Images/BangMau/BM_Trong_0004.jpg">
-      <publishTime>06/22/2018 22:56:19</publishTime>
+      <publishTime>08/01/2018 16:45:14</publishTime>
     </File>
     <File Include="Content/Images/BangMau/Quat_Mau.jpg">
       <publishTime>06/09/2018 10:17:34</publishTime>
     </File>
     <File Include="Content/Images/Banner/banner-000.jpg">
-      <publishTime>06/16/2018 12:50:39</publishTime>
+      <publishTime>08/02/2018 21:56:42</publishTime>
     </File>
     <File Include="Content/Images/Banner/banner-001.jpg">
       <publishTime>06/05/2018 14:02:58</publishTime>
     </File>
     <File Include="Content/Images/Banner/banner-002.jpg">
-      <publishTime>06/25/2018 22:24:59</publishTime>
+      <publishTime>08/02/2018 21:54:52</publishTime>
     </File>
     <File Include="Content/Images/Banner/banner-003.jpg">
-      <publishTime>06/25/2018 22:25:11</publishTime>
+      <publishTime>06/25/2018 22:24:59</publishTime>
     </File>
     <File Include="Content/Images/Banner/banner-004.jpg">
       <publishTime>06/09/2018 17:09:25</publishTime>
@@ -3304,7 +3304,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/26/2018 23:35:00</publishTime>
     </File>
     <File Include="Content/Images/img-not-available.jpg">
-      <publishTime>06/01/2018 20:55:21</publishTime>
+      <publishTime>06/02/2018 10:55:21</publishTime>
     </File>
     <File Include="Content/Images/phong-thuy.jpeg">
       <publishTime>07/23/2018 14:56:34</publishTime>
@@ -3337,10 +3337,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2018 16:26:28</publishTime>
     </File>
     <File Include="Content/Upload/SaveFilesimages/Screenshot %281%29.png">
-      <publishTime>06/01/2018 20:55:21</publishTime>
+      <publishTime>06/02/2018 10:55:21</publishTime>
     </File>
     <File Include="Content/Upload/SaveFiles_thumbs/Images/Screenshot %281%29.png">
-      <publishTime>06/01/2018 20:55:21</publishTime>
+      <publishTime>06/02/2018 10:55:21</publishTime>
     </File>
     <File Include="Content/Upload/_thumbs/Images/123.png">
       <publishTime>06/05/2018 22:21:25</publishTime>
@@ -3577,13 +3577,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2018 00:13:08</publishTime>
     </File>
     <File Include="Views/Home/ColorWarehouse.cshtml">
-      <publishTime>07/10/2018 00:13:08</publishTime>
+      <publishTime>08/01/2018 22:11:36</publishTime>
     </File>
     <File Include="Views/Home/ContactUs.cshtml">
       <publishTime>06/09/2018 17:43:09</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/26/2018 23:35:00</publishTime>
+      <publishTime>08/02/2018 22:04:23</publishTime>
     </File>
     <File Include="Views/Home/ListNews.cshtml">
       <publishTime>07/10/2018 00:13:08</publishTime>
@@ -3595,10 +3595,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2018 00:13:08</publishTime>
     </File>
     <File Include="Views/Home/PhongThuy.cshtml">
-      <publishTime>07/26/2018 23:35:00</publishTime>
+      <publishTime>08/03/2018 22:24:43</publishTime>
     </File>
     <File Include="Views/Home/ProductCertification.cshtml">
-      <publishTime>07/10/2018 00:13:08</publishTime>
+      <publishTime>08/01/2018 22:11:41</publishTime>
+    </File>
+    <File Include="Views/Home/ProductCertification_bk.cshtml">
+      <publishTime>08/01/2018 22:07:10</publishTime>
     </File>
     <File Include="Views/Home/ProductDetail.cshtml">
       <publishTime>07/05/2018 00:04:55</publishTime>
@@ -3625,10 +3628,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:26</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.cshtml">
-      <publishTime>06/22/2018 23:45:40</publishTime>
+      <publishTime>08/02/2018 22:05:16</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>07/07/2018 23:28:21</publishTime>
+      <publishTime>08/21/2018 17:20:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>07/26/2018 23:35:00</publishTime>
@@ -3640,7 +3643,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/26/2018 23:39:18</publishTime>
+      <publishTime>08/21/2018 17:24:31</publishTime>
     </File>
   </ItemGroup>
 </Project>
