@@ -179,7 +179,7 @@ namespace IchiPaint.Controllers
                 GroupId = key,
                 OrderBy = "Id",
                 OrderByType = "Desc",
-                GroupName = "Sơn nội thất"
+                GroupName = "Sơn trang trí nội thất"
             };
 
             var list = GetProductPortal(request);
@@ -200,7 +200,7 @@ namespace IchiPaint.Controllers
                 GroupId = key,
                 OrderBy = "Id",
                 OrderByType = "Desc",
-                GroupName = "Sơn ngoại thất"
+                GroupName = "Sơn trang trí ngoại thất"
             };
 
             var list = GetProductPortal(request);
@@ -222,7 +222,7 @@ namespace IchiPaint.Controllers
                 GroupId = key,
                 OrderBy = "Id",
                 OrderByType = "Desc",
-                GroupName = "Sản phẩm khác"
+                GroupName = "Hệ sản phẩm khác"
             };
 
             var list = GetProductPortal(request);
@@ -240,15 +240,15 @@ namespace IchiPaint.Controllers
             {
                 case "son-noi-that":
                     key = 6;
-                    groupName = "Sơn nội thất";
+                    groupName = "Sơn trang trí nội thất";
                     break;
                 case "son-ngoai-that":
                     key = 7;
-                    groupName = "Sơn ngoại thất";
+                    groupName = "Sơn trang trí ngoại thất";
                     break;
                 case "san-pham-khac":
                     key = 8;
-                    groupName = "Sản phẩm khác";
+                    groupName = "Hệ sản phẩm khác";
                     break;
                 default:
                     key = 0;
@@ -301,6 +301,7 @@ namespace IchiPaint.Controllers
             var total = 0;
             var ds = _productDa.GetProductPortal(productPortalRequest, ref total);
             List<Products> list = CBO<Products>.FillCollectionFromDataSet(ds);
+            list = list.OrderByDescending(m => m.Price).ThenByDescending(m => m.Id).ToList();
             var totalPage = Math.Ceiling((decimal)total / ConfigInfo.RecordOnPageIndex);
             var paging = HtmlControllHelpers.WritePagingPortal(totalPage, productPortalRequest.CurrentPage, total,
                 ConfigInfo.RecordOnPageIndex);

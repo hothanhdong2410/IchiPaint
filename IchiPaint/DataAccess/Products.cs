@@ -240,7 +240,7 @@ namespace IchiPaint.DataAccess
         {
             try
             {
-                var spParameter = new SqlParameter[12];
+                var spParameter = new SqlParameter[13];
 
                 #region Set param
 
@@ -322,20 +322,27 @@ namespace IchiPaint.DataAccess
                 };
                 spParameter[10] = parameter;
 
+                parameter = new SqlParameter("@P_Price", SqlDbType.NVarChar)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = request.Price
+                };
+                spParameter[11] = parameter;
+
 
                 parameter = new SqlParameter("@P_Return", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output,
                     Value = -1
                 };
-                spParameter[11] = parameter;
+                spParameter[12] = parameter;
 
                 #endregion
 
                 SqlHelper.ExecuteNonQuery(ConfigInfo.ConnectString, CommandType.StoredProcedure, "PROC_PRODUCT_INSERT",
                     spParameter);
 
-                return Convert.ToDecimal(spParameter[11].Value);
+                return Convert.ToDecimal(spParameter[12].Value);
             }
             catch (Exception ex)
             {
@@ -377,7 +384,7 @@ namespace IchiPaint.DataAccess
         {
             try
             {
-                var spParameter = new SqlParameter[13];
+                var spParameter = new SqlParameter[14];
 
                 #region Set param
 
@@ -468,19 +475,26 @@ namespace IchiPaint.DataAccess
                 };
                 spParameter[11] = parameter;
 
+                parameter = new SqlParameter("@P_Price", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Input,
+                    Value = model.Price
+                };
+                spParameter[12] = parameter;
+
                 parameter = new SqlParameter("@P_Return", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output,
                     Value = -1
                 };
-                spParameter[12] = parameter;
+                spParameter[13] = parameter;
 
                 #endregion
 
                 SqlHelper.ExecuteNonQuery(ConfigInfo.ConnectString, CommandType.StoredProcedure, "PROC_PRODUCT_EDIT",
                     spParameter);
 
-                return Convert.ToDecimal(spParameter[12].Value);
+                return Convert.ToDecimal(spParameter[13].Value);
             }
             catch (Exception ex)
             {

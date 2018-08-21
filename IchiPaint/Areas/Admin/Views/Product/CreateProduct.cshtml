@@ -34,6 +34,13 @@
             <input type="text" class="form-control" id="txtCoatingThickness"  onkeypress="return isNumber(event)"/>
         </div>
     </div>
+
+    <div class="form-group row">
+        <label for="txtDescription" class="col-sm-2 col-form-label">Giá</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="txtPrice" onkeypress="return isNumber(event)" />
+        </div>
+    </div>
     
     <div class="form-group row">
         <label for="txtDescription" class="col-sm-2 col-form-label">Tính năng</label>
@@ -128,7 +135,8 @@
             features1: $('#txtFeatures1').val(),
             features2: $('#txtFeatures2').val(),
             features3: $('#txtFeatures3').val(),
-            features4: $('#txtFeatures4').val()
+            features4: $('#txtFeatures4').val(),
+            price: $('#txtPrice').val()
         };
 
         axios.post("/Product/CreateProduct", request).then(function (response) {
