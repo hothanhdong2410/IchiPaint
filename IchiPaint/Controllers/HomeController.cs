@@ -488,6 +488,12 @@ namespace IchiPaint.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        [Route("cong-ty-thanh-vien.htm")]
+        public ActionResult MemberCompanies()
+        {
+            return View();
+        }
 
         private Page GetById(int id)
         {

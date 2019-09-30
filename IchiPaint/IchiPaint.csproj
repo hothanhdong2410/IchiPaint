@@ -1276,6 +1276,7 @@
     <Content Include="Areas\Admin\Views\ColorWarehouse\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ColorWarehouse\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Page\Recruitment.cshtml" />
+    <Content Include="Views\Home\MemberCompanies.cshtml" />
     <None Include="Properties\PublishProfiles\Public_Ichi.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.js" />
