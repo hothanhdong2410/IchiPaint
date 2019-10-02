@@ -1347,6 +1347,7 @@
     <Content Include="Views\Home\ColorWarehouse.cshtml" />
     <Content Include="Views\Home\Recruitment.cshtml" />
     <Content Include="Views\Home\ProductCertification_bk.cshtml" />
+    <Content Include="Views\Home\Video.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

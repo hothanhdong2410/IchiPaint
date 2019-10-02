@@ -97,7 +97,6 @@ E:\Working\Home\IchiPaint\IchiPaint\bin\Microsoft.CodeDom.Providers.DotNetCompil
 E:\Working\Home\IchiPaint\IchiPaint\obj\Release\IchiPaint.dll
 E:\Working\Home\IchiPaint\IchiPaint\obj\Release\IchiPaint.pdb
 E:\Working\Home\IchiPaint\IchiPaint\bin\log4net.dll
-E:\Working\Home\IchiPaint\IchiPaint\obj\Release\IchiPaint.csprojResolveAssemblyReference.cache
 D:\Working\IchiPaint\IchiPaint\bin\ApplicationInsights.config
 D:\Working\IchiPaint\IchiPaint\bin\IchiPaint.dll.config
 D:\Working\IchiPaint\IchiPaint\bin\IchiPaint.dll
@@ -198,3 +197,5 @@ D:\Working\IchiPaint\IchiPaint\bin\Microsoft.CodeDom.Providers.DotNetCompilerPla
 D:\Working\IchiPaint\IchiPaint\obj\Release\IchiPaint.csprojResolveAssemblyReference.cache
 D:\Working\IchiPaint\IchiPaint\obj\Release\IchiPaint.dll
 D:\Working\IchiPaint\IchiPaint\obj\Release\IchiPaint.pdb
+E:\Working\Home\IchiPaint\IchiPaint\obj\Release\IchiPaint.csproj.CoreCompileInputs.cache
+E:\Working\Home\IchiPaint\IchiPaint\obj\Release\IchiPaint.csproj.CopyComplete

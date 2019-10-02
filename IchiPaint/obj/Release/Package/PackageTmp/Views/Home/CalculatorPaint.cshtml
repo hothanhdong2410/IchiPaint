@@ -194,7 +194,7 @@
             var val = matSan * 4 * soTang;
             $('#area').html(val + extend);
 
-            var valned = (val / coating).toFixed(3);
+            var valned = (val / coating).toFixed(0);
             $('#need').html(valned + ' L'); 
         } catch (e) {
             console.log(e);

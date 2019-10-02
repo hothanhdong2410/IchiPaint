@@ -337,7 +337,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/_Menu.cshtml">
-      <publishTime>07/10/2018 00:13:08</publishTime>
+      <publishTime>10/02/2019 10:15:45</publishTime>
     </File>
     <File Include="Areas/Admin/Views/web.config">
       <publishTime>06/05/2018 22:21:25</publishTime>
@@ -348,23 +348,41 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>06/05/2018 22:21:26</publishTime>
     </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>06/05/2018 22:21:26</publishTime>
+    </File>
     <File Include="bin/ApplicationInsights.config">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="bin/CKFinder.dll">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
+    <File Include="bin/CKFinder.pdb">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
     <File Include="bin/CKFinder_FileEditor.dll">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
+    <File Include="bin/CKFinder_FileEditor.pdb">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="bin/CKFinder_ImageResize.dll">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
+    <File Include="bin/CKFinder_ImageResize.pdb">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
     <File Include="bin/CKFinder_Watermark.dll">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
+    <File Include="bin/CKFinder_Watermark.pdb">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
     <File Include="bin/IchiPaint.dll">
-      <publishTime>08/21/2018 17:23:03</publishTime>
+      <publishTime>10/02/2019 23:09:09</publishTime>
+    </File>
+    <File Include="bin/IchiPaint.pdb">
+      <publishTime>10/02/2019 23:09:09</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>07/05/2018 00:04:55</publishTime>
@@ -1239,13 +1257,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/ckfinder/bin/Debug/CKFinder.dll">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
+    <File Include="Content/ckfinder/bin/Debug/CKFinder.pdb">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
     <File Include="Content/ckfinder/bin/Debug/CKFinder_FileEditor.dll">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
+    <File Include="Content/ckfinder/bin/Debug/CKFinder_FileEditor.pdb">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="Content/ckfinder/bin/Debug/CKFinder_ImageResize.dll">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
+    <File Include="Content/ckfinder/bin/Debug/CKFinder_ImageResize.pdb">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
     <File Include="Content/ckfinder/bin/Debug/CKFinder_Watermark.dll">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
+    <File Include="Content/ckfinder/bin/Debug/CKFinder_Watermark.pdb">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="Content/ckfinder/bin/Release/CKFinder.dll">
@@ -1254,10 +1284,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/ckfinder/bin/Release/CKFinder_FileEditor.dll">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
+    <File Include="Content/ckfinder/bin/Release/CKFinder_FileEditor.pdb">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
     <File Include="Content/ckfinder/bin/Release/CKFinder_ImageResize.dll">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
+    <File Include="Content/ckfinder/bin/Release/CKFinder_ImageResize.pdb">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
     <File Include="Content/ckfinder/bin/Release/CKFinder_Watermark.dll">
+      <publishTime>06/05/2018 22:21:25</publishTime>
+    </File>
+    <File Include="Content/ckfinder/bin/Release/CKFinder_Watermark.pdb">
       <publishTime>06/05/2018 22:21:25</publishTime>
     </File>
     <File Include="Content/ckfinder/changelog.txt">
@@ -3559,13 +3598,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:26</publishTime>
     </File>
     <File Include="Views/Home/AboutUs.cshtml">
-      <publishTime>06/08/2018 10:28:12</publishTime>
+      <publishTime>08/21/2018 21:46:54</publishTime>
     </File>
     <File Include="Views/Home/AgencyPolicy.cshtml">
       <publishTime>06/08/2018 10:28:12</publishTime>
     </File>
     <File Include="Views/Home/CalculatorPaint.cshtml">
-      <publishTime>07/05/2018 00:04:55</publishTime>
+      <publishTime>09/26/2018 21:52:54</publishTime>
     </File>
     <File Include="Views/Home/ColorBoard.cshtml">
       <publishTime>07/10/2018 00:13:08</publishTime>
@@ -3577,7 +3616,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2018 00:13:08</publishTime>
     </File>
     <File Include="Views/Home/ColorWarehouse.cshtml">
-      <publishTime>08/01/2018 22:11:36</publishTime>
+      <publishTime>08/21/2018 21:56:19</publishTime>
     </File>
     <File Include="Views/Home/ContactUs.cshtml">
       <publishTime>06/09/2018 17:43:09</publishTime>
@@ -3588,17 +3627,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/ListNews.cshtml">
       <publishTime>07/10/2018 00:13:08</publishTime>
     </File>
+    <File Include="Views/Home/MemberCompanies.cshtml">
+      <publishTime>10/02/2019 10:15:45</publishTime>
+    </File>
     <File Include="Views/Home/NewsDetail.cshtml">
       <publishTime>06/05/2018 22:21:26</publishTime>
     </File>
     <File Include="Views/Home/OutstandingProject.cshtml">
-      <publishTime>07/10/2018 00:13:08</publishTime>
+      <publishTime>09/28/2019 23:47:17</publishTime>
     </File>
     <File Include="Views/Home/PhongThuy.cshtml">
       <publishTime>08/03/2018 22:24:43</publishTime>
     </File>
     <File Include="Views/Home/ProductCertification.cshtml">
-      <publishTime>08/01/2018 22:11:41</publishTime>
+      <publishTime>08/21/2018 21:56:05</publishTime>
     </File>
     <File Include="Views/Home/ProductCertification_bk.cshtml">
       <publishTime>08/01/2018 22:07:10</publishTime>
@@ -3615,6 +3657,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/RegisterAdvisory.cshtml">
       <publishTime>06/05/2018 22:45:23</publishTime>
     </File>
+    <File Include="Views/Home/Video.cshtml">
+      <publishTime>10/02/2019 23:07:49</publishTime>
+    </File>
     <File Include="Views/Home/_listProducts.cshtml">
       <publishTime>07/05/2018 00:04:55</publishTime>
     </File>
@@ -3628,10 +3673,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:26</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.cshtml">
-      <publishTime>08/02/2018 22:05:16</publishTime>
+      <publishTime>10/02/2019 12:37:22</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>08/21/2018 17:20:58</publishTime>
+      <publishTime>10/02/2019 22:39:31</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>07/26/2018 23:35:00</publishTime>
@@ -3643,7 +3688,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2018 22:21:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/21/2018 17:24:31</publishTime>
+      <publishTime>10/02/2019 23:09:10</publishTime>
     </File>
   </ItemGroup>
 </Project>

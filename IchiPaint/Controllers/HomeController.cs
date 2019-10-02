@@ -85,6 +85,13 @@ namespace IchiPaint.Controllers
         }
 
         [HttpGet]
+        [Route("video.htm")]
+        public ActionResult Video()
+        {
+            return View();
+        }
+
+        [HttpGet]
         [Route("tin-tuc/page={index}")]
         public ActionResult SearchNewsPortal(int index)
         {
